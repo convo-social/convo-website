@@ -118,21 +118,7 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: IBM Plex Sans Variable;
-  src: url('../images/') format("truetype");
-  font-weight: 100 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: IBM Plex Sans Variable;
-  src: url('../images/') format("truetype");
-  font-weight: 100 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* IBM Plex Sans loaded via Google Fonts in HTML head */
 
 @font-face {
   font-family: IBM Plex Serif;
@@ -419,10 +405,10 @@
   --spacing--120: 120px;
   --max-width--7-columns: 796px;
   --_🎨-color--base---neutral--dark-4: color-mix(in srgb, var(--_🎨-color--base---neutral--dark-100) 4%, transparent);
-  --_🔠-typography---font--body: "IBM Plex Sans Variable", Arial, sans-serif;
+  --_🔠-typography---font--body: "IBM Plex Sans", Arial, sans-serif;
   --_🔠-typography---font--heading-sans: "IBM Plex Serif", Arial, sans-serif;
   --_🔠-typography---font--label: "IBM Plex Mono", Arial, sans-serif;
-  --_🔠-typography---font--button: "IBM Plex Sans Variable", Arial, sans-serif;
+  --_🔠-typography---font--button: "IBM Plex Sans", Arial, sans-serif;
   --_🔠-typography---weight--heading-serif: var(--all-weights--normal);
   --_🔠-typography---weight--heading-sans: var(--all-weights--normal);
   --_🔠-typography---weight--body: var(--all-weights--normal);
@@ -9764,10 +9750,10 @@ img {
     --_🔠-typography---font-weight--h0: var(--_🔠-typography---weight--heading-sans);
     --_🔠-typography---letter-spacing--h0: -2.5px;
     --_🔠-typography---weight--body-bold: var(--all-weights--medium);
-    --_🔠-typography---font--body: "IBM Plex Sans Variable", Arial, sans-serif;
+    --_🔠-typography---font--body: "IBM Plex Sans", Arial, sans-serif;
     --_🔠-typography---font--heading-sans: "IBM Plex Serif", Arial, sans-serif;
     --_🔠-typography---font--label: "IBM Plex Mono", Arial, sans-serif;
-    --_🔠-typography---font--button: "IBM Plex Sans Variable", Arial, sans-serif;
+    --_🔠-typography---font--button: "IBM Plex Sans", Arial, sans-serif;
     --_🔠-typography---weight--heading-serif: var(--all-weights--normal);
     --_🔠-typography---weight--heading-sans: var(--all-weights--normal);
     --_🔠-typography---weight--body: var(--all-weights--normal);
@@ -10342,10 +10328,10 @@ img {
     --_🔠-typography---font-weight--h0: var(--_🔠-typography---weight--heading-sans);
     --_🔠-typography---letter-spacing--h0: -3px;
     --_🔠-typography---weight--body-bold: var(--all-weights--medium);
-    --_🔠-typography---font--body: "IBM Plex Sans Variable", Arial, sans-serif;
+    --_🔠-typography---font--body: "IBM Plex Sans", Arial, sans-serif;
     --_🔠-typography---font--heading-sans: "IBM Plex Serif", Arial, sans-serif;
     --_🔠-typography---font--label: "IBM Plex Mono", Arial, sans-serif;
-    --_🔠-typography---font--button: "IBM Plex Sans Variable", Arial, sans-serif;
+    --_🔠-typography---font--button: "IBM Plex Sans", Arial, sans-serif;
     --_🔠-typography---weight--heading-serif: var(--all-weights--normal);
     --_🔠-typography---weight--heading-sans: var(--all-weights--normal);
     --_🔠-typography---weight--body: var(--all-weights--normal);
@@ -11046,10 +11032,10 @@ img {
     --_🔠-typography---font-weight--h0: var(--_🔠-typography---weight--heading-sans);
     --_🔠-typography---letter-spacing--h0: -3px;
     --_🔠-typography---weight--body-bold: var(--all-weights--medium);
-    --_🔠-typography---font--body: "IBM Plex Sans Variable", Arial, sans-serif;
+    --_🔠-typography---font--body: "IBM Plex Sans", Arial, sans-serif;
     --_🔠-typography---font--heading-sans: "IBM Plex Serif", Arial, sans-serif;
     --_🔠-typography---font--label: "IBM Plex Mono", Arial, sans-serif;
-    --_🔠-typography---font--button: "IBM Plex Sans Variable", Arial, sans-serif;
+    --_🔠-typography---font--button: "IBM Plex Sans", Arial, sans-serif;
     --_🔠-typography---weight--heading-serif: var(--all-weights--normal);
     --_🔠-typography---weight--heading-sans: var(--all-weights--normal);
     --_🔠-typography---weight--body: var(--all-weights--normal);
@@ -11615,20 +11601,7 @@ img {
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: 'IBM Plex Sans Variable';
-  src: url('../images/') format('truetype');
-  font-weight: 100 700;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'IBM Plex Sans Variable';
-  src: url('../images/') format('truetype');
-  font-weight: 100 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* IBM Plex Sans loaded via Google Fonts in HTML head */
 @font-face {
   font-family: 'IBM Plex Serif';
   src: url('../fonts/IBMPlexSerif-ExtraLightItalic.ttf') format('truetype');

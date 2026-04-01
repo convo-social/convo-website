@@ -2792,8 +2792,8 @@
             </div>
           </div>
           <div class="right-cta-c w-col w-col-6 w-col-stack">
-            <div class="form-block-cta-c w-form">
-              <form id="demo-form" name="demo-form" data-name="Demo Form" class="form-cta-c" data-wf-page-id="6993b104d651e8e87100b7d7" data-wf-element-id="04ef9d40-fcad-5b09-85c6-64e1d7ec23e7">
+            <div class="form-block-cta-c">
+              <form id="demo-form" name="demo-form" data-name="Demo Form" class="form-cta-c">
                 <div class="input-wrap">
                   <div class="label-large text-input-label">Name</div><input class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Your name" type="text" id="name" required="">
                 </div>
@@ -2820,11 +2820,9 @@
                   </a>
                 </div>
               </form>
-              <div class="success-message w-form-done">
-                <div>Thanks! Opening Calendly so you can pick a time&hellip;</div>
-              </div>
-              <div class="error-message w-form-fail">
-                <div>Oops! Something went wrong. Please try again.</div>
+              <div id="demo-success" style="display:none; padding:2.5rem; text-align:center;">
+                <div class="body-strong" style="margin-bottom:0.5rem;">Thanks! Opening Calendly so you can pick a time&hellip;</div>
+                <div class="text-body" style="opacity:0.6;">Didn&#x27;t open? <a href="https://calendly.com/useconvo/book" target="_blank" style="text-decoration:underline;">Click here</a></div>
               </div>
             </div>
           </div>
@@ -3096,7 +3094,7 @@ requestAnimationFrame(raf);
 
     // Show success state
     form.style.display = 'none';
-    var done = form.parentElement.querySelector('.w-form-done');
+    var done = document.getElementById('demo-success');
     if (done) done.style.display = 'block';
 
     // Build Calendly URL with prefilled name + email

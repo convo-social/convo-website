@@ -61,7 +61,7 @@
       --text-hero-lh: 1.05;
       --text-hero-tracking: -0.02em;
 
-      --text-section: 40px;
+      --text-section: 34px;
       --text-section-lh: 1.1;
       --text-section-tracking: -0.02em;
 
@@ -78,12 +78,12 @@
 
       --section-pad-y: 120px;
       --eyebrow-to-h2: 16px;
-      --h2-to-sub: 24px;
+      --h2-to-sub: 12px;
       --sub-to-content: 64px;
       --ds-card-gap: 24px;
       --ds-card-pad: 32px;
       --ds-card-bg: #F4F2EC;
-      --ds-card-radius: 20px;
+      --ds-card-radius: 12px;
       --eyebrow-color: #6B6B6B;
     }
 
@@ -169,7 +169,8 @@
       font-family: var(--h-font-sans);
       font-size: 0.875rem;
       font-weight: 500;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1.25rem;
+      height: 44px;
       border-radius: 999px;
       border: 1px solid transparent;
       cursor: pointer;
@@ -280,7 +281,7 @@
       top: 0;
       z-index: 100;
       background: var(--h-bg);
-      border-bottom: 1px solid rgba(0,0,0,0.07);
+      border-bottom: none;
     }
     .site-nav .container {
       display: flex;
@@ -466,6 +467,10 @@
       overflow: hidden;
       isolation: isolate;
       padding: 0;
+      min-height: calc(100vh - 206px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .h-hero::before,
@@ -481,36 +486,37 @@
       z-index: 2;
       max-width: 1140px;
       margin: 0 auto;
-      padding: 72px 48px 88px;
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 80px;
-      align-items: center;
+      padding: 0 48px;
+    }
+
+    .h-hero-text {
+      max-width: 50%;
     }
 
     .h-eyebrow {
+      font-size: 10px;
       opacity: 0;
       animation: fadeUp 0.8s ease 0.1s forwards;
     }
 
     .h-headline {
       font-family: var(--h-font-sans);
-      font-size: var(--text-hero);
+      font-size: 40px;
       font-weight: 500;
       letter-spacing: var(--text-hero-tracking);
       line-height: var(--text-hero-lh);
       color: var(--h-ink);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       opacity: 0;
       animation: fadeUp 0.9s ease 0.2s forwards;
     }
 
     .h-sub {
-      font-size: var(--text-body);
+      font-size: 14px;
       line-height: var(--text-body-lh);
       color: var(--h-gray-1);
       font-weight: 400;
-      margin-bottom: 32px;
+      margin-bottom: 18px;
       max-width: 100%;
       opacity: 0;
       animation: fadeUp 0.9s ease 0.3s forwards;
@@ -518,7 +524,7 @@
 
     .h-cta-row {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
       opacity: 0;
       animation: fadeUp 0.9s ease 0.4s forwards;
@@ -527,7 +533,11 @@
     /* Hero button arrow handled by global .btn svg */
 
     .showcase-wrap {
-      position: relative;
+      position: absolute;
+      top: 50%;
+      right: 48px;
+      width: 45%;
+      margin-top: -160px;
       opacity: 0;
       animation: fadeUp 1s ease 0.5s forwards;
     }
@@ -535,12 +545,14 @@
     /* Showcase panel */
     .showcase {
       position: relative;
+      transform: scale(0.8);
+      transform-origin: top right;
     }
 
     .showcase-panel {
       background: var(--h-white);
       border: none;
-      border-radius: 18px;
+      border-radius: 12px;
       padding: 24px;
       box-shadow:
         0 2px 12px -4px rgba(0,0,0,0.1),
@@ -1089,7 +1101,7 @@
       right: -20px;
       width: 88px;
       height: 88px;
-      border-radius: 14px;
+      border-radius: 10px;
       overflow: hidden;
       z-index: 5;
       box-shadow:
@@ -1264,7 +1276,7 @@
 
     /* ─── LOGO BAR ─── */
     .sec-logos {
-      padding: 24px 0;
+      padding: 48px 0 24px;
       overflow: hidden;
       background: var(--h-bg);
     }
@@ -1289,7 +1301,7 @@
       align-items: center;
       gap: 0;
       width: max-content;
-      animation: logoScroll 45s linear infinite;
+      animation: logoScroll 25s linear infinite;
     }
     .logos-scroll-wrap:hover .logos-track {
       animation-play-state: paused;
@@ -1301,67 +1313,79 @@
     .logo-item {
       flex-shrink: 0;
       padding: 0 36px;
-      font-family: var(--h-font-sans);
-      font-size: 20px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      color: var(--h-gray-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       white-space: nowrap;
+    }
+    .logo-item img {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: opacity 0.3s ease, filter 0.3s ease;
+    }
+    .logo-item img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
     }
 
     /* ─── METRICS ROW ─── */
     .sec-metrics { background: var(--h-bg); padding: var(--section-pad-y) 0; }
     .sec-metrics > .container { max-width: 1140px; padding: 0 48px; }
-    .metrics-header { margin-bottom: var(--sub-to-content); }
+    .metrics-header { margin-bottom: 2.5rem; }
     .metrics-header p {
       font-size: 1rem;
       color: var(--h-gray-1);
       max-width: 100%;
-      margin-top: 1.25rem;
+      margin-top: 12px;
     }
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--ds-card-gap);
-    }
-    .metric-card {
       background: var(--hw-card-bg);
       border-radius: var(--ds-card-radius);
-      padding: var(--ds-card-pad);
-      height: 14rem;
+      padding: 2.5rem 3rem;
+    }
+    .metric-card {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.7s ease, transform 0.7s ease;
       position: relative;
+    }
+    .metric-card + .metric-card {
+      border-left: 0.5px solid #ccc8c0;
     }
     .metric-card.in-view {
       opacity: 1;
       transform: translateY(0);
     }
     .metric-card-label {
-      font-size: 0.875rem;
-      text-transform: capitalize;
-      color: var(--h-gray-1);
+      display: none;
     }
     .metric-card-num {
-      font-size: 80px;
+      font-size: 52px;
       font-weight: 500;
       line-height: 1;
       display: inline-flex;
       align-items: baseline;
-      gap: 0.25rem;
+      gap: 0.15rem;
       color: var(--h-ink);
+      margin-bottom: 0.5rem;
     }
     .metric-card-unit {
-      font-size: 32px;
+      font-size: 24px;
       color: var(--h-gray-2);
       vertical-align: baseline;
     }
     .metric-card-caption {
-      font-size: 0.875rem;
+      font-size: 13px;
       color: var(--h-gray-1);
     }
 
@@ -1387,7 +1411,7 @@
     .pl-visual {
       background: var(--h-white);
       border: 1px solid var(--pl-line);
-      border-radius: 18px;
+      border-radius: 12px;
       overflow: hidden;
       position: relative;
       height: 640px;
@@ -1856,7 +1880,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border-radius: 18px;
+      border-radius: 12px;
       border: 1px solid transparent;
       background: transparent;
       transition: opacity 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -1967,7 +1991,7 @@
       width: 85%;
       max-width: 85%;
       background: #fff;
-      border-radius: 14px;
+      border-radius: 10px;
       padding: 18px 16px 14px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.06);
       display: flex;
@@ -2021,7 +2045,7 @@
     .hw-v-recruit {
       width: 85%;
       background: #fff;
-      border-radius: 14px;
+      border-radius: 10px;
       padding: 18px 16px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.06);
       display: flex;
@@ -2230,7 +2254,7 @@
     }
     .hw-v-report-card {
       background: #fff;
-      border-radius: 14px;
+      border-radius: 10px;
       padding: 18px 16px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.06);
     }
@@ -2281,7 +2305,7 @@
     .hw-v-quote {
       width: 85%;
       background: #fff;
-      border-radius: 14px;
+      border-radius: 10px;
       padding: 20px 18px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.06);
     }
@@ -2343,7 +2367,7 @@
       max-width: 360px;
       background: var(--h-white);
       border: 1px solid var(--h-line);
-      border-radius: 14px;
+      border-radius: 10px;
       padding: 18px 20px;
       opacity: 0;
       transition: opacity 0.7s ease 0.2s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
@@ -2999,7 +3023,7 @@
       position: relative;
       aspect-ratio: 4 / 3;
       overflow: hidden;
-      border-radius: 18px;
+      border-radius: 12px;
       border: 1px solid var(--h-line);
       background: var(--hw-card-bg);
       transition: box-shadow 0.2s;
@@ -3415,7 +3439,7 @@
     .sig-chat-msg {
       max-width: 85%;
       padding: 10px 14px;
-      border-radius: 14px;
+      border-radius: 10px;
       font-size: 12.5px;
       line-height: 1.5;
       color: var(--h-ink);
@@ -3425,7 +3449,7 @@
       max-width: 80%;
       background: var(--h-ink);
       color: var(--h-white);
-      border-radius: 14px 14px 4px 14px;
+      border-radius: 10px 10px 4px 10px;
     }
     .sig-chat-msg.ai {
       align-self: flex-start;
@@ -3433,7 +3457,7 @@
       background: var(--h-white);
       border: 1px solid var(--h-line);
       color: var(--h-ink);
-      border-radius: 14px 14px 14px 4px;
+      border-radius: 10px 10px 10px 4px;
       margin-top: 6px;
     }
     .sig-chat-label {
@@ -3460,7 +3484,7 @@
       padding: 10px 12px 10px 16px;
       background: var(--h-white);
       border: 1px solid var(--h-line);
-      border-radius: 14px;
+      border-radius: 10px;
       align-self: end;
     }
     .sig-chat-input-text {
@@ -3554,7 +3578,7 @@
     .cta-wall-tile {
       width: 88px;
       height: 88px;
-      border-radius: 18px;
+      border-radius: 12px;
       overflow: hidden;
       flex-shrink: 0;
     }
@@ -3595,11 +3619,12 @@
     /* CTA button uses global .btn .btn-primary */
 
     @media (max-width: 720px) {
-      .metrics-grid { grid-template-columns: 1fr; gap: 16px; }
-      .metric-card { height: auto; padding: 32px 24px; }
-      .metric-card-num { font-size: 64px; }
-      .logos-track { animation-duration: 30s; }
-      .logo-item { font-size: 16px; padding: 0 28px; }
+      .metrics-grid { grid-template-columns: 1fr; padding: 2rem; }
+      .metric-card + .metric-card { border-left: none; border-top: 0.5px solid #ccc8c0; padding-top: 1.5rem; margin-top: 1.5rem; }
+      .metric-card-num { font-size: 44px; }
+      .logos-track { animation-duration: 18s; }
+      .logo-item { padding: 0 24px; }
+      .logo-item img { height: 22px; }
       .pl-row { grid-template-columns: 1fr; gap: 24px; }
       .pl-visual { height: 480px; }
       .pl-cards { height: auto; }
@@ -3620,10 +3645,17 @@
       .cta-text-headline { font-size: var(--text-section); }
       .cta-wall-tile { width: 64px; height: 64px; border-radius: 14px; }
       .cta-wall { gap: 8px; }
+      .h-hero-text {
+        max-width: 100%;
+      }
+      .showcase-wrap {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+      }
       .h-hero-inner {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        padding: 40px 24px 80px;
+        padding: 32px 24px 48px;
       }
       .nav-links,
       .nav-actions {
@@ -3692,16 +3724,16 @@
   <div class="h-hero-inner">
     <div class="h-hero-text">
       <div class="h-eyebrow">Consumer intelligence at enterprise scale</div>
-      <h1 class="h-headline">Ask your customers before you make the call.</h1>
+      <h1 class="h-headline">Ask your customers<br>before you make the call.</h1>
       <p class="h-sub">The research layer for brands that can't afford to be wrong. Hundreds of moderated consumer conversations, run in parallel, returned as a decision with the evidence behind it. In days, not weeks.</p>
       <div class="h-cta-row">
         <a href="#" class="btn btn-primary">
-          Ask your first question
+          Book a demo
           <svg viewBox="0 0 16 16" fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
-        <a href="#" class="btn btn-ghost">Talk to us</a>
+        <a href="#" class="btn btn-ghost">Learn more</a>
       </div>
     </div>
 
@@ -3917,19 +3949,17 @@
   <div class="logos-eyebrow">Trusted by</div>
   <div class="logos-scroll-wrap">
     <div class="logos-track" id="logosTrack">
-      <span class="logo-item">Hearst</span>
-      <span class="logo-item">Cardiac Solutions</span>
-      <span class="logo-item">Sauz</span>
-      <span class="logo-item">KidStrong</span>
-      <span class="logo-item">Chick-fil-A</span>
-      <span class="logo-item">Contour</span>
-      <span class="logo-item">CareCognitics</span>
-      <span class="logo-item">DrinkOver</span>
-      <span class="logo-item">Im'peccable Chicken</span>
-      <span class="logo-item">Mozi Wash</span>
+      <span class="logo-item"><img src="images/div.marquee-logo-2.png" alt="Merciv"></span>
+      <span class="logo-item"><img src="images/div.marquee-logo.png" alt="Cognify"></span>
+      <span class="logo-item"><img src="images/2div.marquee-logo.png" alt="Mozi Wash"></span>
+      <span class="logo-item"><img src="images/contour.png" alt="Contour"></span>
+      <span class="logo-item"><img src="images/div.marquee-logo-1.png" alt="DrinkOver"></span>
+      <span class="logo-item"><img src="images/CC-Logo_Left_Coloured_png-01-1-1.png" alt="CareCognitics"></span>
     </div>
   </div>
 </section>
+
+<div class="section-divider"></div>
 
 <section class="sec-metrics">
   <div class="container">
@@ -3939,19 +3969,16 @@
     </div>
     <div class="metrics-grid">
       <div class="metric-card" data-metric="21">
-        <div class="metric-card-label">Faster than agency</div>
         <div class="metric-card-num"><span class="metric-count">0</span><span class="metric-card-unit">&times;</span></div>
-        <div class="metric-card-caption">Six-week cycles, optimized into 48 hours.</div>
+        <div class="metric-card-caption">faster than agency cycles</div>
       </div>
       <div class="metric-card" data-metric="90">
-        <div class="metric-card-label">Less than agency</div>
         <div class="metric-card-num"><span class="metric-count">0</span><span class="metric-card-unit">%</span></div>
-        <div class="metric-card-caption">Top-tier methodology at a fraction of the cost.</div>
+        <div class="metric-card-caption">lower cost per study</div>
       </div>
       <div class="metric-card" data-metric="250">
-        <div class="metric-card-label">Conversations in parallel</div>
         <div class="metric-card-num"><span class="metric-count">0</span><span class="metric-card-unit">+</span></div>
-        <div class="metric-card-caption">A year of focus groups, in a single month.</div>
+        <div class="metric-card-caption">sessions running in parallel</div>
       </div>
     </div>
   </div>
@@ -3962,7 +3989,7 @@
 <section class="platform">
   <div class="pl-header">
     <h2>The research platform rebuilt around the decision.</h2>
-    <p class="subhead">Humanize runs moderated consumer conversations at the scale and speed of a survey, with the depth and nuance of qualitative research. Deployed by insights teams replacing six-week agency cycles with next day answers.</p>
+    <p class="subhead">Moderated consumer conversations at survey scale, with qualitative depth. Next-day answers, not six-week cycles.</p>
   </div>
 
   <div class="pl-row">
@@ -4316,12 +4343,12 @@
       right: -8rem;
       width: 260px;
     }
-  
+
     .ds-float-3 {
-      bottom: -3rem;
-      left: -3rem;
-      width: 230px;
-      z-index: 4;
+      top: 25%;
+      left: calc(-9rem - 65px);
+      width: 200px;
+      z-index: 6;
     }
   
     /* ── Inputs & Controls ── */
@@ -4441,6 +4468,7 @@
       opacity: 1;
       transform: translateY(0);
     }
+
     
     .ds-delay-1 { transition-delay: 0.15s; }
     .ds-delay-2 { transition-delay: 0.30s; }
@@ -4592,9 +4620,7 @@
       var scaleH = innerH > 10 && naturalH > 0 ? Math.min(1, innerH / naturalH) : 1;
 
       var scale = Math.min(scaleW, scaleH);
-      // Shift stage left to visually center the composition (float-3 extends left)
-      var floatBleed = -60;
-      stage.style.transform = 'scale(' + scale + ') translateX(' + floatBleed + 'px)';
+      stage.style.transform = 'scale(' + scale + ') translateX(95px)';
 
       // Ensure canvas is at least tall enough to show scaled content
       canvas.style.minHeight = (naturalH * scale + pt + pb) + 'px';
@@ -4712,7 +4738,7 @@
       border: var(--border-style);
       z-index: 3;
       opacity: 0;
-      transform: translateY(12px);
+      transform: translateX(-50%) translateY(12px);
       transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
@@ -4742,9 +4768,9 @@
       white-space: nowrap;
     }
   
-    .card-1 { top: 5%;        left: 5%;  }
-    .card-2 { bottom: 5%;    left: 5%; }
-    .card-3 { bottom: 5%;    left: 5%; }
+    .card-1 { top: 5%;    left: 50%; transform: translateX(-50%); }
+    .card-2 { bottom: 5%; left: 50%; transform: translateX(-50%); }
+    .card-3 { bottom: 5%; left: 50%; transform: translateX(-50%); }
   
     .fg-progress-track {
       width: 100%;
@@ -4770,8 +4796,8 @@
       transform: translate(-50%, -50%);
       width: max-content;
       border-radius: 100px;
-      padding: 0 1.25rem 0 0.875rem;
-      height: 52px;
+      padding: 0 1rem 0 0.75rem;
+      height: 40px;
       box-shadow: var(--shadow-soft);
       display: inline-flex;
       align-items: center;
@@ -4803,7 +4829,7 @@
     .ai-text {
       font-family: 'IBM Plex Sans', sans-serif;
       color: var(--text-primary);
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       font-weight: 500;
       white-space: nowrap;
     }
@@ -5007,12 +5033,12 @@
 
       function showCard(card) {
         card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
+        card.style.transform = 'translateX(-50%) translateY(0)';
       }
 
       function hideCard(card) {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(12px)';
+        card.style.transform = 'translateX(-50%) translateY(12px)';
       }
 
       function applyCardContent(card, data) {
@@ -5213,7 +5239,7 @@
   .video-card {
     background: #ffffff;
     padding: 1rem;
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
     width: 100%;
     box-sizing: border-box;
@@ -5467,7 +5493,7 @@
   <div class="container">
     <div class="signal-header">
         <h2>The Signal Report, written for every stakeholder.</h2>
-        <p class="subhead">The Signal Report is the decision, the evidence, and the exact customer moments behind it. Written to be forwarded from the insights team to the CMO to the board without a single slide getting rebuilt.</p>
+        <p class="subhead">The decision, the evidence, and the customer moments behind it. Board-ready without rebuilding a single slide.</p>
     </div>
     <div class="signal-bento">
       <div class="sig-card large" data-sig="drivers">
@@ -5484,7 +5510,7 @@
       </div>
       <div class="sig-card large">
         <div class="sig-card-title">Participant clips</div>
-        <div class="sig-card-desc">Timestamped video moments from every session. The exact second a customer said the thing that changed the room. Share without editing.</div>
+        <div class="sig-card-desc">Timestamped video moments from every session. The exact second a customer said the thing that changed the room.</div>
         <div class="sig-card-widget">
           <div class="sig-clips">
             <div class="sig-clip-tile"><img src="https://i.pravatar.cc/400?img=20" alt=""><div class="sig-clip-play"></div><div class="sig-clip-ts">0:47</div></div>
@@ -5500,7 +5526,7 @@
     <div class="sig-bottom-row" style="margin-top:var(--ds-card-gap)">
       <div class="sig-card">
         <div class="sig-card-title">Board-ready deck</div>
-        <div class="sig-card-desc">Themes, quotes, and resonance scores in a deck your team can present without reformatting.</div>
+        <div class="sig-card-desc">Themes, quotes, and resonance scores in a deck your team can present as-is.</div>
         <div class="sig-card-widget">
           <div class="sig-deck-stack">
             <div class="sig-slide back2"></div>
@@ -5517,7 +5543,7 @@
       </div>
       <div class="sig-card">
         <div class="sig-card-title">Explore chat</div>
-        <div class="sig-card-desc">Ask follow-up questions against the full transcript. Dig into a segment, theme, or moment without going back to the data.</div>
+        <div class="sig-card-desc">Ask follow-ups against the full transcript. Dig into any segment or theme.</div>
         <div class="sig-card-widget">
           <div class="sig-chat">
             <div style="display:flex;flex-direction:column;align-items:flex-end"><div class="sig-chat-msg user">Why did onboarding come up so often?</div></div>
@@ -5528,7 +5554,7 @@
       </div>
       <div class="sig-card">
         <div class="sig-card-title">Personas</div>
-        <div class="sig-card-desc">The distinct customer profiles your data revealed. Not made-up archetypes. The real groups speaking in your sessions.</div>
+        <div class="sig-card-desc">Real customer profiles your data revealed, not made-up archetypes.</div>
         <div class="sig-card-widget">
           <div class="sig-personas">
             <div class="sig-persona"><div class="sig-persona-avatar"><img src="https://i.pravatar.cc/400?img=30" alt=""></div><div class="sig-persona-name">Cautious sampler</div></div>
@@ -5548,7 +5574,7 @@
     <div class="cases-header">
       <div class="cases-header-left">
         <h2>The decisions teams bring us.</h2>
-        <p class="subhead">The decisions traditional research is too slow or too expensive to answer. Global launches, category switching, shelf impact, regulated panels.</p>
+        <p class="subhead">Global launches, category switching, shelf impact, and regulated panels — answered in days.</p>
       </div>
       <div class="cases-arrows">
         <button class="cases-arrow" id="casesLeft" disabled><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
@@ -5566,7 +5592,7 @@
             <div class="cc-mockup-meta">Same study, twelve languages</div>
           </div>
         </div>
-        <div class="cc-footer"><div class="cc-cat">Global launch validation</div><div class="cc-desc">Does this positioning translate across markets? Run the same study in twelve languages in the same week.</div></div>
+        <div class="cc-footer"><div class="cc-cat">Global launch validation</div><div class="cc-desc">Does this positioning translate? Run the same study in twelve languages in one week.</div></div>
       </div>
       <div class="cc">
         <div class="cc-photo">
@@ -5590,7 +5616,7 @@
             <div class="cc-mockup-check"><span class="ck">&#10003;</span> Trustworthy</div>
           </div>
         </div>
-        <div class="cc-footer"><div class="cc-cat">Packaging &amp; shelf impact</div><div class="cc-desc">Does the new design communicate what your team thinks it does? Not in a lab. At the shelf, in the store, in their hands.</div></div>
+        <div class="cc-footer"><div class="cc-cat">Packaging &amp; shelf impact</div><div class="cc-desc">Does the new design communicate what your team thinks it does? Test at the shelf, not in a lab.</div></div>
       </div>
       <div class="cc">
         <div class="cc-photo">
@@ -5601,7 +5627,7 @@
             <div class="cc-mockup-quote">"I forget after the first week. Nothing brings me back."</div>
           </div>
         </div>
-        <div class="cc-footer"><div class="cc-cat">Clinical &amp; regulated audiences</div><div class="cc-desc">Patient adherence, physician preference, caregiver experience. Vetted panels in segments other tools can't reach.</div></div>
+        <div class="cc-footer"><div class="cc-cat">Clinical &amp; regulated audiences</div><div class="cc-desc">Patient adherence, physician preference, caregiver experience. Vetted panels others can't reach.</div></div>
       </div>
     </div>
   </div>
@@ -5613,7 +5639,7 @@
   <div class="container">
     <div class="tech-header">
         <h2>The technology behind modern qualitative research.</h2>
-        <p class="subhead">We rebuilt recruitment, moderation, and synthesis from the ground up. Same rigor as traditional qualitative, built for the cadence of modern product and brand teams.</p>
+        <p class="subhead">Recruitment, moderation, and synthesis rebuilt from the ground up for modern product and brand teams.</p>
     </div>
     <div class="tech-tab-bar">
       <button class="tech-tab active" data-tech="0">Audience Precision</button>
@@ -5647,7 +5673,7 @@
         <div class="tech-box-right">
           <div class="tech-cap-row"><div class="tech-cap-num">01</div><div class="tech-cap-content"><div class="tech-cap-name">Adaptive Probing Engine</div><div class="tech-cap-desc">Follows up on vague answers, traces every contradiction.</div></div></div>
           <div class="tech-cap-row"><div class="tech-cap-num">02</div><div class="tech-cap-content"><div class="tech-cap-name">Cross-Session Pattern Detection</div><div class="tech-cap-desc">Spots signals across thirty sessions no human team could.</div></div></div>
-          <div class="tech-cap-row"><div class="tech-cap-num">03</div><div class="tech-cap-content"><div class="tech-cap-name">Bias Control Framework</div><div class="tech-cap-desc">Safeguards against leading questions and people telling you what you want to hear.</div></div></div>
+          <div class="tech-cap-row"><div class="tech-cap-num">03</div><div class="tech-cap-content"><div class="tech-cap-name">Bias Control Framework</div><div class="tech-cap-desc">Safeguards against leading questions and confirmation bias.</div></div></div>
           <div class="tech-cap-row"><div class="tech-cap-num">04</div><div class="tech-cap-content"><div class="tech-cap-name">Researcher Oversight</div><div class="tech-cap-desc">Senior research lead supervises every study for rigor.</div></div></div>
         </div>
       </div>

@@ -1841,17 +1841,35 @@
       letter-spacing: -0.005em;
     }
 
-    /* Pillars (Scale / Depth / Speed) */
-    .pl-pillars {
+    /* Cards */
+    .pl-cards {
       display: flex;
       flex-direction: column;
-      gap: 64px;
-      max-width: 720px;
+      height: 40rem;
+      gap: 8px;
     }
-    .pl-pillar-visual {
-      margin-bottom: 24px;
+    .pl-card {
+      position: relative;
+      padding: 24px;
+      cursor: pointer;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 18px;
+      border: 1px solid transparent;
+      background: transparent;
+      transition: opacity 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0.45;
     }
-    .pl-pillar-num {
+    .pl-card:hover { opacity: 0.7; }
+    .pl-card.active {
+      opacity: 1;
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+    }
+    .pl-card-num {
       font-size: 0.75rem;
       font-weight: 500;
       color: var(--pl-ink-3);
@@ -1859,7 +1877,8 @@
       display: block;
       text-transform: capitalize;
     }
-    .pl-pillar-title {
+    .pl-card.active .pl-card-num { color: var(--pl-ink-2); }
+    .pl-card-title {
       font-size: 18px;
       font-weight: 500;
       color: var(--pl-ink);
@@ -1867,179 +1886,12 @@
       margin-bottom: 8px;
       line-height: 1.3;
     }
-    .pl-pillar-body {
+    .pl-card-body {
       font-size: 14px;
       line-height: 1.55;
       color: var(--pl-ink-2);
     }
 
-    /* ── Shared visual card ── */
-    .plv-card {
-      background: var(--h-bg);
-      border: 1px solid var(--h-line);
-      border-radius: var(--ds-card-radius);
-      overflow: hidden;
-    }
-    .plv-chrome {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px;
-      border-bottom: 1px solid var(--h-line);
-      font-family: var(--h-font-mono);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--pl-ink-3);
-    }
-    .plv-chrome-left {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .plv-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--pl-green);
-      flex-shrink: 0;
-    }
-    .plv-body {
-      padding: 18px 16px;
-    }
-    .plv-foot {
-      border-top: 1px solid var(--h-line);
-      padding: 10px 16px;
-      font-family: var(--h-font-mono);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--pl-ink-3);
-    }
-
-    /* ── Depth: Participant Grid ── */
-    .plv-participants {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
-      margin-bottom: 14px;
-    }
-    .plv-participant {
-      aspect-ratio: 1;
-      border-radius: 8px;
-      position: relative;
-      overflow: hidden;
-    }
-    .plv-participant-label {
-      position: absolute;
-      bottom: 6px;
-      left: 6px;
-      font-family: var(--h-font-mono);
-      font-size: 8px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #fff;
-      background: rgba(0,0,0,0.45);
-      padding: 2px 6px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .plv-participant-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--pl-green);
-    }
-    .plv-quotes {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .plv-quote-row {
-      display: flex;
-      gap: 8px;
-      font-size: 12px;
-      line-height: 1.45;
-      color: var(--pl-ink-2);
-    }
-    .plv-quote-who {
-      font-family: var(--h-font-mono);
-      font-size: 10px;
-      font-weight: 500;
-      color: var(--pl-ink-3);
-      flex-shrink: 0;
-      width: 28px;
-    }
-
-    /* ── Speed: Decision View ── */
-    .plv-headline-label {
-      font-family: var(--h-font-mono);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--pl-ink-3);
-      margin-bottom: 8px;
-    }
-    .plv-headline {
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--pl-ink);
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-      margin-bottom: 18px;
-    }
-    .plv-reasons-label {
-      font-family: var(--h-font-mono);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--pl-ink-3);
-      margin-bottom: 10px;
-    }
-    .plv-reason {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-    .plv-reason:last-child { margin-bottom: 0; }
-    .plv-reason-label {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--pl-ink);
-      width: 80px;
-      flex-shrink: 0;
-    }
-    .plv-reason-bar {
-      flex: 1;
-      height: 6px;
-      background: var(--h-gray-4);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-    .plv-reason-fill {
-      height: 100%;
-      border-radius: 3px;
-      background: var(--hw-beige-dark);
-    }
-    .plv-reason.primary .plv-reason-fill {
-      background: var(--coral);
-    }
-    .plv-reason-pct {
-      font-family: var(--h-font-mono);
-      font-size: 10px;
-      color: var(--pl-ink-3);
-      width: 28px;
-      text-align: right;
-      flex-shrink: 0;
-    }
 
     /* ─── HOW IT WORKS ─── */
     .how {
@@ -2088,14 +1940,15 @@
       border-radius: var(--ds-card-radius);
       position: relative;
       overflow: hidden;
-      min-height: 420px;
-      flex: 1;
+      aspect-ratio: 1 / 1;
+      flex: 0 0 auto;
+      width: 100%;
     }
 
     .visual {
       position: relative;
       overflow: hidden;
-      padding: 16px 14px;
+      padding: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2108,15 +1961,15 @@
 
     /* ── Card 1: Cycling Prompt ── */
     .hw-prompt-card {
-      width: 100%;
-      max-width: 100%;
+      width: 85%;
+      max-width: 85%;
       background: #fff;
       border-radius: 14px;
-      padding: 20px 16px 14px;
+      padding: 18px 16px 14px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.06);
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
     .hw-prompt-text {
       font-family: var(--h-font-sans);
@@ -2163,7 +2016,7 @@
 
     /* ── Card 2: Vertical Recruit ── */
     .hw-v-recruit {
-      width: 100%;
+      width: 85%;
       background: #fff;
       border-radius: 14px;
       padding: 18px 16px;
@@ -2250,7 +2103,7 @@
 
     /* ── Card 3: Vertical AI Moderator ── */
     .hw-v-mod {
-      width: 100%;
+      width: 85%;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -2423,12 +2276,11 @@
       border-radius: 3px;
     }
     .hw-v-quote {
+      width: 85%;
       background: #fff;
-      border: 1px solid var(--h-line);
-      border-left: 3px solid var(--coral);
-      border-radius: 0 10px 10px 0;
-      padding: 14px 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
     }
     .hw-v-quote-text {
       font-family: 'IBM Plex Serif', serif;
@@ -2912,14 +2764,14 @@
 
     @media (max-width: 1024px) {
       .steps { grid-template-columns: repeat(2, 1fr); }
-      .step-card { min-height: 360px; }
+      .step-card { aspect-ratio: 1 / 1; }
     }
     @media (max-width: 640px) {
       .how { padding: var(--section-pad-y) 0; }
       .how-inner { padding: 0 24px; }
       .how-header { margin-bottom: 48px; }
       .steps { grid-template-columns: 1fr; }
-      .step-card { min-height: 320px; }
+      .step-card { aspect-ratio: auto; min-height: 280px; }
     }
 
     /* ─── THE METHOD ─── */
@@ -3751,7 +3603,7 @@
       .logo-item { font-size: 16px; padding: 0 28px; }
       .pl-row { grid-template-columns: 1fr; gap: 24px; }
       .pl-visual { height: 480px; }
-      .pl-pillars { gap: 48px; }
+      .pl-cards { height: auto; }
       .pl-card { padding: 20px; }
       .platform > .pl-header,
       .platform > .pl-row { padding-left: 24px; padding-right: 24px; }
@@ -4115,114 +3967,207 @@
     <p class="subhead">Humanize runs moderated consumer conversations at the scale and speed of a survey, with the depth and nuance of qualitative research. Deployed by insights teams replacing six-week agency cycles with next day answers.</p>
   </div>
 
-  <div class="pl-pillars">
+  <div class="pl-row">
+    <div class="pl-visual">
 
-    <!-- Scale: text-only -->
-    <div class="pl-pillar">
-      <div class="pl-pillar-text">
-        <span class="pl-pillar-num">Scale</span>
-        <h3 class="pl-pillar-title">Every launch decision, not just the boardroom ones.</h3>
-        <p class="pl-pillar-body">Traditional research economics force you to pick your battles. Humanize runs at a price point where testing every SKU, every market, every positioning is defensible.</p>
-      </div>
-    </div>
-
-    <!-- Depth: participant grid + text -->
-    <div class="pl-pillar">
-      <div class="pl-pillar-visual">
-        <div class="plv-card">
-          <div class="plv-chrome">
-            <div class="plv-chrome-left"><span class="plv-dot"></span> 6 participants &middot; live exchange</div>
-            <div>24:07</div>
-          </div>
-          <div class="plv-body">
-            <div class="plv-participants">
-              <div class="plv-participant" style="background: linear-gradient(135deg, #d4c4a8, #c4b498);">
-                <div class="plv-participant-label"><span class="plv-participant-dot"></span> P04</div>
-              </div>
-              <div class="plv-participant" style="background: linear-gradient(135deg, #c8b898, #b8a888);">
-                <div class="plv-participant-label">P07</div>
-              </div>
-              <div class="plv-participant" style="background: linear-gradient(135deg, #d8c8a8, #c8b898);">
-                <div class="plv-participant-label">P09</div>
-              </div>
-              <div class="plv-participant" style="background: linear-gradient(135deg, #c4b498, #b4a488);">
-                <div class="plv-participant-label"><span class="plv-participant-dot"></span> P11</div>
-              </div>
-              <div class="plv-participant" style="background: linear-gradient(135deg, #d0c0a0, #c0b090);">
-                <div class="plv-participant-label">P13</div>
-              </div>
-              <div class="plv-participant" style="background: linear-gradient(135deg, #ccbc9c, #bcac8c);">
-                <div class="plv-participant-label">P15</div>
-              </div>
-            </div>
-            <div class="plv-quotes">
-              <div class="plv-quote-row">
-                <span class="plv-quote-who">P07</span>
-                <span>"Same. I'd try a smaller pack first before committing."</span>
-              </div>
-              <div class="plv-quote-row">
-                <span class="plv-quote-who">P09</span>
-                <span>"For me it's the storage. I don't have room for the bulk size."</span>
-              </div>
-              <div class="plv-quote-row">
-                <span class="plv-quote-who">P13</span>
-                <span>"And honestly, the packaging looks like a warehouse product."</span>
-              </div>
+      <!-- PANEL 1: Scale -->
+      <div class="pl-panel active" data-panel="1">
+        <div class="visual-chrome">
+          <div class="chrome-left"><span class="pl-live-dot"></span> Live study feed &middot; 12 active this week</div>
+          <div class="chrome-right">Q2 2026</div>
+        </div>
+        <div class="panel-body">
+          <div class="feed-mask">
+            <div class="feed-track" id="feed-track">
+              <!-- Set A -->
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Beverage line extension</span><span class="pl-meta">240 ppl &middot; 4h ago</span></div>
+              <div class="feed-row live"><span class="pl-status"></span><span class="study-name">CPG ingredient transparency</span><span class="pl-meta">195 ppl &middot; <span class="live-tag">live now</span></span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Premium pet food positioning</span><span class="pl-meta">110 ppl &middot; 1d ago</span></div>
+              <div class="feed-row live"><span class="pl-status"></span><span class="study-name">SaaS pricing tier reaction</span><span class="pl-meta">85 ppl &middot; <span class="live-tag">live now</span></span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Fashion subscription unboxing</span><span class="pl-meta">270 ppl &middot; 3d ago</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Wine club acquisition messaging</span><span class="pl-meta">130 ppl &middot; queued</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Cookware brand voice test</span><span class="pl-meta">165 ppl &middot; 5h ago</span></div>
+              <div class="feed-row live"><span class="pl-status"></span><span class="study-name">Skincare ingredient education</span><span class="pl-meta">380 ppl &middot; <span class="live-tag">live now</span></span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Frozen meal occasion mapping</span><span class="pl-meta">220 ppl &middot; 2d ago</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Direct-to-consumer mattress trial</span><span class="pl-meta">95 ppl &middot; yesterday</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Hot sauce flavor preference</span><span class="pl-meta">145 ppl &middot; 6h ago</span></div>
+              <div class="feed-row live"><span class="pl-status"></span><span class="study-name">Streaming service onboarding</span><span class="pl-meta">410 ppl &middot; <span class="live-tag">live now</span></span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Children's snack packaging</span><span class="pl-meta">180 ppl &middot; queued</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Tea brand competitive positioning</span><span class="pl-meta">75 ppl &middot; 2d ago</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Athletic recovery product test</span><span class="pl-meta">230 ppl &middot; 1d ago</span></div>
+              <!-- Set A repeats -->
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Beverage line extension</span><span class="pl-meta">240 ppl &middot; 4h ago</span></div>
+              <div class="feed-row live"><span class="pl-status"></span><span class="study-name">CPG ingredient transparency</span><span class="pl-meta">195 ppl &middot; <span class="live-tag">live now</span></span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Premium pet food positioning</span><span class="pl-meta">110 ppl &middot; 1d ago</span></div>
+              <div class="feed-row live"><span class="pl-status"></span><span class="study-name">SaaS pricing tier reaction</span><span class="pl-meta">85 ppl &middot; <span class="live-tag">live now</span></span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Fashion subscription unboxing</span><span class="pl-meta">270 ppl &middot; 3d ago</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Wine club acquisition messaging</span><span class="pl-meta">130 ppl &middot; queued</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Cookware brand voice test</span><span class="pl-meta">165 ppl &middot; 5h ago</span></div>
+              <div class="feed-row live"><span class="pl-status"></span><span class="study-name">Skincare ingredient education</span><span class="pl-meta">380 ppl &middot; <span class="live-tag">live now</span></span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Frozen meal occasion mapping</span><span class="pl-meta">220 ppl &middot; 2d ago</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Direct-to-consumer mattress trial</span><span class="pl-meta">95 ppl &middot; yesterday</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Hot sauce flavor preference</span><span class="pl-meta">145 ppl &middot; 6h ago</span></div>
+              <div class="feed-row live"><span class="pl-status"></span><span class="study-name">Streaming service onboarding</span><span class="pl-meta">410 ppl &middot; <span class="live-tag">live now</span></span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Children's snack packaging</span><span class="pl-meta">180 ppl &middot; queued</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Tea brand competitive positioning</span><span class="pl-meta">75 ppl &middot; 2d ago</span></div>
+              <div class="feed-row"><span class="pl-status"></span><span class="study-name">Athletic recovery product test</span><span class="pl-meta">230 ppl &middot; 1d ago</span></div>
             </div>
           </div>
-          <div class="plv-foot">6 participants &middot; live exchange &middot; 24:07</div>
+        </div>
+        <div class="visual-foot">
+          <div class="pl-bars"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          48 studies run this quarter &middot; 12 live now
         </div>
       </div>
-      <div class="pl-pillar-text">
-        <span class="pl-pillar-num">Depth</span>
-        <h3 class="pl-pillar-title">What people actually mean, not what they type.</h3>
-        <p class="pl-pillar-body">Group conversation surfaces the second-order answer, the one that only emerges when a participant hears someone else say the opposite. Surveys can't get there.</p>
-      </div>
-    </div>
 
-    <!-- Speed: decision view + text -->
-    <div class="pl-pillar">
-      <div class="pl-pillar-visual">
-        <div class="plv-card">
-          <div class="plv-chrome">
-            <div class="plv-chrome-left"><span class="plv-dot"></span> Decision view &middot; all signals</div>
-            <div>847 responses</div>
+      <!-- PANEL 2: Conversation (Depth) -->
+      <div class="pl-panel" data-panel="2">
+        <div class="visual-chrome">
+          <div class="chrome-left"><span class="pl-live-dot"></span> 6 participants &middot; live exchange</div>
+          <div class="chrome-right">24:07</div>
+        </div>
+        <div class="panel-body">
+          <div class="conv-body">
+            <div class="speakers">
+              <div class="speaker live"><div class="pl-avatar"></div><div class="label">P04 live</div></div>
+              <div class="speaker"><div class="pl-avatar"></div><div class="label">P07</div></div>
+              <div class="speaker"><div class="pl-avatar"></div><div class="label">P09</div></div>
+              <div class="speaker live"><div class="pl-avatar"></div><div class="label">P11 live</div></div>
+              <div class="speaker"><div class="pl-avatar"></div><div class="label">P13</div></div>
+              <div class="speaker"><div class="pl-avatar"></div><div class="label">P15</div></div>
+            </div>
+            <div class="caption-area">
+              <div class="caption-track">
+                <!-- Set A -->
+                <div class="caption-line"><span class="who">P04</span><span>"I'd buy it but the size is wrong for my household."</span></div>
+                <div class="caption-line"><span class="who">P11</span><span>"Exactly, it's not a value issue. It's a commitment issue."</span></div>
+                <div class="caption-line"><span class="who">P07</span><span>"Same. I'd try a smaller pack first before committing."</span></div>
+                <div class="caption-line"><span class="who">P09</span><span>"For me it's the storage. I don't have room for the bulk size."</span></div>
+                <div class="caption-line"><span class="who">P13</span><span>"And honestly, the packaging looks like a warehouse product."</span></div>
+                <div class="caption-line"><span class="who">P15</span><span>"That's the thing, it doesn't feel like something I'd put on my counter."</span></div>
+                <div class="caption-line"><span class="who">P04</span><span>"Right, the smaller version would actually fit my life."</span></div>
+                <div class="caption-line"><span class="who">P11</span><span>"I'd pay more per ounce for the smaller one, no question."</span></div>
+                <div class="caption-line"><span class="who">P07</span><span>"Same here. It's about trying it without the commitment."</span></div>
+                <div class="caption-line"><span class="who">P09</span><span>"If they offered a starter size I'd buy today."</span></div>
+                <!-- Set A repeats -->
+                <div class="caption-line"><span class="who">P04</span><span>"I'd buy it but the size is wrong for my household."</span></div>
+                <div class="caption-line"><span class="who">P11</span><span>"Exactly, it's not a value issue. It's a commitment issue."</span></div>
+                <div class="caption-line"><span class="who">P07</span><span>"Same. I'd try a smaller pack first before committing."</span></div>
+                <div class="caption-line"><span class="who">P09</span><span>"For me it's the storage. I don't have room for the bulk size."</span></div>
+                <div class="caption-line"><span class="who">P13</span><span>"And honestly, the packaging looks like a warehouse product."</span></div>
+                <div class="caption-line"><span class="who">P15</span><span>"That's the thing, it doesn't feel like something I'd put on my counter."</span></div>
+                <div class="caption-line"><span class="who">P04</span><span>"Right, the smaller version would actually fit my life."</span></div>
+                <div class="caption-line"><span class="who">P11</span><span>"I'd pay more per ounce for the smaller one, no question."</span></div>
+                <div class="caption-line"><span class="who">P07</span><span>"Same here. It's about trying it without the commitment."</span></div>
+                <div class="caption-line"><span class="who">P09</span><span>"If they offered a starter size I'd buy today."</span></div>
+              </div>
+            </div>
           </div>
-          <div class="plv-body">
-            <div class="plv-headline-label">Why people churned</div>
-            <div class="plv-headline">Onboarding confusion is driving 67% of cancellations. Pricing is a distant second.</div>
-            <div class="plv-reasons-label">Top reasons (847 responses)</div>
-            <div class="plv-reason primary">
-              <span class="plv-reason-label">Onboarding</span>
-              <div class="plv-reason-bar"><div class="plv-reason-fill" style="width:67%"></div></div>
-              <span class="plv-reason-pct">67%</span>
-            </div>
-            <div class="plv-reason">
-              <span class="plv-reason-label">Pricing</span>
-              <div class="plv-reason-bar"><div class="plv-reason-fill" style="width:43%"></div></div>
-              <span class="plv-reason-pct">43%</span>
-            </div>
-            <div class="plv-reason">
-              <span class="plv-reason-label">Trust</span>
-              <div class="plv-reason-bar"><div class="plv-reason-fill" style="width:38%"></div></div>
-              <span class="plv-reason-pct">38%</span>
-            </div>
-            <div class="plv-reason">
-              <span class="plv-reason-label">Convenience</span>
-              <div class="plv-reason-bar"><div class="plv-reason-fill" style="width:29%"></div></div>
-              <span class="plv-reason-pct">29%</span>
-            </div>
-          </div>
-          <div class="plv-foot">5 themes &middot; 847 responses &middot; 94% completion</div>
+        </div>
+        <div class="visual-foot">
+          <div class="pl-bars"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          6 participants &middot; live exchange &middot; 24:07
         </div>
       </div>
-      <div class="pl-pillar-text">
-        <span class="pl-pillar-num">Speed</span>
-        <h3 class="pl-pillar-title">Still true when you read it.</h3>
-        <p class="pl-pillar-body">Six-week studies answer last quarter's question. By the time the deck lands, the campaign shipped and the category moved. Humanize runs at the speed of the market itself, so the answer is the answer that's true right now.</p>
+
+      <!-- PANEL 3: Live Market View (Speed) -->
+      <div class="pl-panel" data-panel="3">
+        <div class="visual-chrome">
+          <div class="chrome-left"><span class="pl-live-dot"></span> Live market view &middot; premium skincare</div>
+          <div class="chrome-right">Week of Apr 14</div>
+        </div>
+        <div class="panel-body">
+          <div class="lmv-body">
+            <div class="lmv-metrics">
+              <div class="lmv-metric-card">
+                <div class="lmv-metric-label">Questions asked</div>
+                <div class="lmv-metric-num">14</div>
+                <div class="lmv-metric-sub">this quarter</div>
+              </div>
+              <div class="lmv-metric-card">
+                <div class="lmv-metric-label">Themes surfaced</div>
+                <div class="lmv-metric-num">23</div>
+                <div class="lmv-metric-sub">this quarter</div>
+              </div>
+              <div class="lmv-metric-card">
+                <div class="lmv-metric-label">Sessions live now</div>
+                <div class="lmv-metric-num">287 <span class="lmv-coral-dot"></span></div>
+                <div class="lmv-metric-sub lmv-coral">streaming</div>
+              </div>
+            </div>
+            <div class="lmv-questions">
+              <div class="lmv-q-card">
+                <div class="lmv-q-left">
+                  <div class="lmv-q-time">Mon &middot; 7 hrs</div>
+                  <div class="lmv-q-question">Is the new packaging landing with our heavy buyers?</div>
+                  <div class="lmv-q-answer">Yes, but only in-store. Online-first buyers are flat, they can't tell it apart from the old design in thumbnails.</div>
+                </div>
+                <div class="lmv-q-viz">
+                  <svg width="60" height="24" viewBox="0 0 60 24"><rect x="0" y="6" width="12" height="18" rx="2" fill="var(--pl-ink)" opacity="0.7"/><rect x="16" y="10" width="12" height="14" rx="2" fill="var(--pl-ink)" opacity="0.45"/><rect x="32" y="2" width="12" height="22" rx="2" fill="var(--pl-ink)" opacity="0.85"/><rect x="48" y="8" width="12" height="16" rx="2" fill="var(--pl-ink)" opacity="0.55"/></svg>
+                  <div class="lmv-q-viz-label lmv-green">142 sessions</div>
+                </div>
+              </div>
+              <div class="lmv-q-card">
+                <div class="lmv-q-left">
+                  <div class="lmv-q-time">Tue &middot; 25 hrs</div>
+                  <div class="lmv-q-question">Why are heavy buyers switching to the $40 competitor?</div>
+                  <div class="lmv-q-answer">Three months of positioning, invalidated this week. It's not price. It's the ingredient story we stopped telling.</div>
+                </div>
+                <div class="lmv-q-viz">
+                  <svg width="60" height="24" viewBox="0 0 60 24"><path d="M4 6 C16 8 28 12 40 16 Q50 20 56 22" stroke="var(--pl-ink)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/><circle cx="56" cy="22" r="2.5" fill="var(--pl-ink)" opacity="0.6"/></svg>
+                  <div class="lmv-q-viz-label lmv-coral">&minus;12 pts loyalty</div>
+                </div>
+              </div>
+              <div class="lmv-q-card">
+                <div class="lmv-q-left">
+                  <div class="lmv-q-time">Wed &middot; 19 hrs</div>
+                  <div class="lmv-q-question">Does our Gen Z messaging land outside coastal markets?</div>
+                  <div class="lmv-q-answer">In Texas and the Midwest, no. The "clean girl" aesthetic reads as coastal to them. Southern buyers skew to warmth and ritual.</div>
+                </div>
+                <div class="lmv-q-viz">
+                  <svg width="60" height="24" viewBox="0 0 60 24"><rect x="0" y="4" width="16" height="20" rx="2" fill="var(--pl-ink)" opacity="0.75"/><rect x="22" y="10" width="16" height="14" rx="2" fill="var(--pl-ink)" opacity="0.45"/><rect x="44" y="8" width="16" height="16" rx="2" fill="var(--pl-ink)" opacity="0.55"/></svg>
+                  <div class="lmv-q-viz-label">3 regions</div>
+                </div>
+              </div>
+              <div class="lmv-q-card lmv-q-active">
+                <div class="lmv-q-left">
+                  <div class="lmv-q-time">Thu &middot; 3 hrs in</div>
+                  <div class="lmv-q-question">Should we launch the refill program this quarter?</div>
+                  <div class="lmv-q-answer">Early signal: sustainability messaging outperforms savings 2:1 with repeat buyers. 88 more sessions incoming.</div>
+                </div>
+                <div class="lmv-q-viz">
+                  <svg width="60" height="24" viewBox="0 0 60 24"><path d="M4 18 C12 16 20 14 28 10 Q40 4 56 2" stroke="#C47A4A" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="56" cy="2" r="2.5" fill="#C47A4A"/></svg>
+                  <div class="lmv-q-viz-label lmv-coral">62% answering now</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="visual-foot" style="justify-content:space-between">
+          <span>4 questions &middot; 14 hrs avg turnaround</span>
+          <span style="display:flex;align-items:center;gap:6px;color:var(--pl-green)"><span class="pl-live-dot"></span> Always on</span>
+        </div>
       </div>
+
     </div>
 
+    <div class="pl-cards">
+      <div class="pl-card active" data-card="1">
+        <span class="pl-card-num">Scale</span>
+        <h3 class="pl-card-title">Every launch decision, not just the boardroom ones.</h3>
+        <p class="pl-card-body">Traditional research economics force you to pick your battles. Humanize runs at a price point where testing every SKU, every market, every positioning is defensible.</p>
+      </div>
+      <div class="pl-card" data-card="2">
+        <span class="pl-card-num">Depth</span>
+        <h3 class="pl-card-title">What people actually mean, not what they type.</h3>
+        <p class="pl-card-body">Group conversation surfaces the second-order answer, the one that only emerges when a participant hears someone else say the opposite. Surveys can't get there.</p>
+      </div>
+      <div class="pl-card" data-card="3">
+        <span class="pl-card-num">Speed</span>
+        <h3 class="pl-card-title">Still true when you read it.</h3>
+        <p class="pl-card-body">Six-week studies answer last quarter's question. By the time the deck lands, the campaign shipped and the category moved. Humanize runs at the speed of the market itself, so the answer is the answer that's true right now.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -4240,7 +4185,7 @@
       <div class="step-card">
         <div class="visual">
           <div class="hw-prompt-card">
-            <div class="hw-prompt-text" id="hwPromptText">Run a website conversion audit on your URL. Show the landing page to target users and find out what stops them from signing up.</div>
+            <div class="hw-prompt-text" id="hwPromptText">Why are buyers switching to our competitor?</div>
             <div class="hw-prompt-footer">
               <button class="hw-prompt-attach">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
@@ -4273,24 +4218,6 @@
                 <div class="hw-v-chip">Heavy users</div>
               </div>
             </div>
-            <div class="hw-v-section">
-              <div class="hw-v-label">Audience scale</div>
-              <div class="hw-v-scale-row">
-                <div>
-                  <div class="hw-v-scale-num">200</div>
-                  <div class="hw-v-scale-caption">50 groups</div>
-                </div>
-                <div class="hw-v-avatars">
-                  <span style="background:linear-gradient(135deg,#C47A4A,#8A5C3A)"></span>
-                  <span style="background:linear-gradient(135deg,#6B5A8A,#3A2A5C)"></span>
-                  <span style="background:linear-gradient(135deg,#4A7A8A,#1F4A5C)"></span>
-                  <span style="background:linear-gradient(135deg,#5A8A6B,#2A5C3A)"></span>
-                </div>
-              </div>
-            </div>
-            <div class="hw-v-section">
-              <button class="hw-v-recruit-btn" tabindex="-1">Recruit Participants</button>
-            </div>
           </div>
           <!-- old widget removed -->
         </div>
@@ -4312,10 +4239,6 @@
               </video>
               <div class="hw-v-video-label"><span class="hw-v-live-dot"></span> Live &middot; Session 12</div>
             </div>
-            <div class="hw-v-bar">
-              <div class="hw-v-bar-dots"><span></span><span></span><span></span></div>
-              <div class="hw-v-bar-text">Cross-referencing consensus patterns...</div>
-            </div>
             <div class="hw-v-insight">
               <div class="hw-v-insight-label">Group consensus</div>
               <div class="hw-v-insight-text">Strong alignment emerging on sustainability values.</div>
@@ -4334,34 +4257,9 @@
       <div class="step-item">
       <div class="step-card">
         <div class="visual">
-          <div class="hw-v-report">
-            <div class="hw-v-report-card">
-              <div class="hw-v-report-header">Signal Report &middot; Week 14</div>
-              <div class="hw-v-finding">
-                <div class="hw-v-finding-label">Stands out</div>
-                <div class="hw-v-finding-bar"><div class="hw-v-finding-fill" style="width:78%"></div></div>
-                <div class="hw-v-finding-pct">78%</div>
-              </div>
-              <div class="hw-v-finding">
-                <div class="hw-v-finding-label">Feels premium</div>
-                <div class="hw-v-finding-bar"><div class="hw-v-finding-fill" style="width:66%"></div></div>
-                <div class="hw-v-finding-pct">66%</div>
-              </div>
-              <div class="hw-v-finding">
-                <div class="hw-v-finding-label">Clear message</div>
-                <div class="hw-v-finding-bar"><div class="hw-v-finding-fill" style="width:61%"></div></div>
-                <div class="hw-v-finding-pct">61%</div>
-              </div>
-              <div class="hw-v-finding">
-                <div class="hw-v-finding-label">Would recommend</div>
-                <div class="hw-v-finding-bar"><div class="hw-v-finding-fill" style="width:54%"></div></div>
-                <div class="hw-v-finding-pct">54%</div>
-              </div>
-            </div>
-            <div class="hw-v-quote">
-              <div class="hw-v-quote-text">"I'd just abandon the cart if there's no money-back guarantee."</div>
-              <div class="hw-v-quote-attr">&mdash; Participant, Session 12</div>
-            </div>
+          <div class="hw-v-quote">
+            <div class="hw-v-quote-text">"I'd just abandon the cart if there's no money-back guarantee."</div>
+            <div class="hw-v-quote-attr">&mdash; Participant, Session 12</div>
           </div>
         </div>
       </div>
@@ -4741,7 +4639,19 @@
   startTimer();
 </script>
 
-<!-- tab-switching JS removed (pillars are static) -->
+<script>
+  const plCards = document.querySelectorAll('.pl-card');
+  const plPanels = document.querySelectorAll('.pl-panel');
+  plCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.dataset.card;
+      plCards.forEach(c => c.classList.remove('active'));
+      plPanels.forEach(p => p.classList.remove('active'));
+      card.classList.add('active');
+      document.querySelector('.pl-panel[data-panel="' + id + '"]').classList.add('active');
+    });
+  });
+</script>
 
 <script>
 (function () {
@@ -4758,11 +4668,11 @@
   var promptEl = document.getElementById('hwPromptText');
   if (promptEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var prompts = [
-      'Run a website conversion audit on your URL. Show the landing page to target users and find out what stops them from signing up.',
-      'Test a new product concept for your product or idea. Show the concept to real consumers and get feedback on appeal, willingness to buy, and what needs to change.',
-      'Understand why buyers are switching to your competitor. Talk to lapsed customers and surface the real reason they left.',
-      'Validate your pricing strategy for your new tier. Find out what price breaks the deal and what makes it feel worth it.',
-      'Pressure-test your positioning for your next launch. See which message resonates with the audience you\u2019re trying to win.'
+      'Why are buyers switching to our competitor?',
+      'Test this new product concept with real buyers.',
+      'What\u2019s stopping signups on our landing page?',
+      'Validate pricing for the premium tier.',
+      'Pressure-test our launch positioning.'
     ];
     var pIdx = 0;
     function cyclePrompt() {

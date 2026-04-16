@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+  <link href="css/tokens.css" rel="stylesheet" type="text/css">
   <style>
     /* ─── DESIGN TOKENS ─── */
     :root {
@@ -56,26 +57,7 @@
       --pl-beige: #C9BFA8;
       --pl-line: rgba(26, 26, 24, 0.08);
 
-      /* ─── DESIGN SYSTEM ─── */
-      --text-hero: 44px;
-      --text-hero-lh: 1.05;
-      --text-hero-tracking: -0.02em;
-
-      --text-section: 34px;
-      --text-section-lh: 1.1;
-      --text-section-tracking: -0.02em;
-
-      --text-card: 22px;
-      --text-card-lh: 1.3;
-      --text-card-tracking: -0.01em;
-
-      --text-body: 16px;
-      --text-body-lh: 1.55;
-
-      --text-meta: 13px;
-      --text-meta-lh: 1.4;
-      --text-meta-tracking: 0.08em;
-
+      /* Typography tokens live in css/tokens.css (loaded after this block). */
       --section-pad-y: 120px;
       --eyebrow-to-h2: 16px;
       --h2-to-sub: 12px;
@@ -101,8 +83,8 @@
       color: var(--color-dark);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: var(--text-body);
+      line-height: var(--text-body-lh);
     }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
@@ -167,7 +149,7 @@
       align-items: center;
       gap: 8px;
       font-family: var(--h-font-sans);
-      font-size: 0.875rem;
+      font-size: var(--text-button);
       font-weight: 500;
       padding: 0.75rem 1.25rem;
       height: 44px;
@@ -212,7 +194,7 @@
     }
 
     .btn-sm {
-      font-size: 0.75rem;
+      font-size: var(--text-button-sm);
       padding: 0.5rem 1rem;
     }
 
@@ -224,7 +206,7 @@
       padding: 16px 20px;
     }
     .insight-card .quote {
-      font-size: 14px;
+      font-size: var(--text-small);
       font-style: italic;
       font-weight: 400;
       line-height: 1.65;
@@ -233,7 +215,7 @@
     }
     .insight-card .meta {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
+      font-size: var(--text-nano);
       text-transform: uppercase;
       letter-spacing: 0.07em;
       color: #999;
@@ -255,9 +237,6 @@
     /* ─── MOBILE ─── */
     @media (max-width: 720px) {
       :root {
-        --text-hero: 36px;
-        --text-section: 30px;
-        --text-card: 20px;
         --section-pad-y: 72px;
         --sub-to-content: 40px;
       }
@@ -291,7 +270,7 @@
     }
     .nav-wordmark {
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 18px;
+      font-size: var(--text-lead);
       font-weight: 600;
       letter-spacing: -0.01em;
       color: var(--color-dark);
@@ -301,7 +280,7 @@
       gap: 32px;
     }
     .nav-links a {
-      font-size: 14px;
+      font-size: var(--text-nav);
       font-weight: 500;
       color: var(--h-ink);
       padding: 6px 14px;
@@ -318,7 +297,7 @@
       gap: 8px;
     }
     .nav-actions .btn-sm {
-      font-size: 0.75rem;
+      font-size: var(--text-button-sm);
       padding: 0.3rem 1rem;
     }
     .nav-toggle {
@@ -362,7 +341,7 @@
     .nav-mobile a {
       display: block;
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 16px;
+      font-size: var(--text-body);
       font-weight: 500;
       color: var(--color-muted);
       padding: 10px 0;
@@ -395,14 +374,14 @@
     }
     .footer-brand-wordmark {
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 17px;
+      font-size: var(--text-lead);
       font-weight: 600;
       color: #FFFFFF;
       letter-spacing: -0.01em;
     }
     .footer-brand-tagline {
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 13.5px;
+      font-size: var(--text-small);
       font-weight: 400;
       color: rgba(255,255,255,0.5);
       max-width: 240px;
@@ -415,7 +394,7 @@
     }
     .footer-col-title {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
+      font-size: var(--text-meta);
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -425,7 +404,7 @@
     .footer-col a {
       display: block;
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 13.5px;
+      font-size: var(--text-small);
       font-weight: 400;
       color: rgba(255,255,255,0.6);
       line-height: 2.4;
@@ -445,7 +424,7 @@
     .footer-bottom span,
     .footer-bottom a {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
+      font-size: var(--text-mini);
       font-weight: 400;
       color: rgba(255,255,255,0.35);
       letter-spacing: 0.04em;
@@ -494,14 +473,14 @@
     }
 
     .h-eyebrow {
-      font-size: 10px;
+      font-size: var(--text-micro);
       opacity: 0;
       animation: fadeUp 0.8s ease 0.1s forwards;
     }
 
     .h-headline {
       font-family: var(--h-font-sans);
-      font-size: 40px;
+      font-size: var(--text-hero);
       font-weight: 500;
       letter-spacing: var(--text-hero-tracking);
       line-height: var(--text-hero-lh);
@@ -512,7 +491,7 @@
     }
 
     .h-sub {
-      font-size: 14px;
+      font-size: var(--text-body);
       line-height: var(--text-body-lh);
       color: var(--h-gray-1);
       font-weight: 400;
@@ -599,7 +578,7 @@
       align-items: center;
       justify-content: center;
       color: rgba(255,255,255,0.95);
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       letter-spacing: -0.01em;
       z-index: 1;
@@ -619,7 +598,7 @@
 
     .participant-count {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -668,7 +647,7 @@
     }
 
     .question-text {
-      font-size: 13.5px;
+      font-size: var(--text-small);
       font-weight: 500;
       color: var(--h-ink);
       letter-spacing: -0.01em;
@@ -719,7 +698,7 @@
 
     .slide-label {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -773,7 +752,7 @@
     }
 
     .theme-name {
-      font-size: 12.5px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--h-ink);
       letter-spacing: -0.005em;
@@ -783,7 +762,7 @@
 
     .theme-sub {
       font-family: var(--h-font-mono);
-      font-size: 8px;
+      font-size: var(--text-pico);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--h-gray-1);
@@ -793,7 +772,7 @@
 
     .theme-count {
       font-family: var(--h-font-mono);
-      font-size: 12px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--h-gray-1);
       letter-spacing: -0.01em;
@@ -804,7 +783,7 @@
     .h-quote {
       border-left: 2px solid var(--h-ink);
       padding-left: 12px;
-      font-size: 12.5px;
+      font-size: var(--text-meta);
       line-height: 1.5;
       color: var(--h-ink-2);
       font-weight: 400;
@@ -814,7 +793,7 @@
       display: flex;
       gap: 14px;
       font-family: var(--h-font-mono);
-      font-size: 13px;
+      font-size: var(--text-caption);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--h-gray-1);
@@ -840,7 +819,7 @@
       border: 1px solid var(--h-gray-4);
       border-radius: 999px;
       padding: 10px 16px;
-      font-size: 10px;
+      font-size: var(--text-micro);
       color: var(--h-ink-2);
       font-weight: 400;
       opacity: 0;
@@ -878,7 +857,7 @@
     }
 
     .source-text {
-      font-size: 12px;
+      font-size: var(--text-meta);
       color: var(--h-gray-1);
       line-height: 1.4;
     }
@@ -923,7 +902,7 @@
       background: var(--h-ink);
       color: var(--h-white);
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 4px 8px;
@@ -938,14 +917,14 @@
     }
 
     .concept-name {
-      font-size: 12px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--h-ink);
     }
 
     .concept-pct {
       font-family: var(--h-font-mono);
-      font-size: 12px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--h-ink);
     }
@@ -970,14 +949,14 @@
     .bar-label {
       display: flex;
       justify-content: space-between;
-      font-size: 12px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--h-ink);
     }
 
     .bar-pct {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       color: var(--h-gray-1);
     }
 
@@ -1006,7 +985,7 @@
       gap: 24px;
       margin-bottom: 14px;
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
@@ -1041,7 +1020,7 @@
     }
 
     .compare-label {
-      font-size: 12px;
+      font-size: var(--text-meta);
       color: var(--h-ink);
       font-weight: 500;
     }
@@ -1079,7 +1058,7 @@
 
     .compare-pct {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       color: var(--h-gray-1);
       width: 28px;
       text-align: right;
@@ -1089,7 +1068,7 @@
       display: flex;
       justify-content: space-between;
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--h-gray-1);
@@ -1140,7 +1119,7 @@
 
     .pip-initials {
       font-family: var(--h-font-sans);
-      font-size: 22px;
+      font-size: var(--text-feature);
       font-weight: 500;
       color: rgba(255,255,255,0.95);
       letter-spacing: -0.02em;
@@ -1179,7 +1158,7 @@
 
     .pip-rec-label {
       font-family: var(--h-font-mono);
-      font-size: 8px;
+      font-size: var(--text-pico);
       color: var(--h-white);
       letter-spacing: 0.08em;
       font-weight: 500;
@@ -1283,7 +1262,7 @@
     }
     .logos-eyebrow {
       font-family: var(--h-font-mono);
-      font-size: 11px;
+      font-size: var(--text-mini);
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -1337,7 +1316,7 @@
     .sec-metrics > .container { max-width: 1320px; padding: 0 24px; }
     .metrics-header { margin-bottom: 2.5rem; }
     .metrics-header p {
-      font-size: 1rem;
+      font-size: var(--text-body);
       color: var(--h-gray-1);
       max-width: 100%;
       margin-top: 12px;
@@ -1371,7 +1350,7 @@
       display: none;
     }
     .metric-card-num {
-      font-size: 52px;
+      font-size: var(--text-display);
       font-weight: 500;
       line-height: 1;
       display: inline-flex;
@@ -1381,12 +1360,12 @@
       margin-bottom: 0.5rem;
     }
     .metric-card-unit {
-      font-size: 24px;
+      font-size: var(--text-sub);
       color: var(--h-gray-2);
       vertical-align: baseline;
     }
     .metric-card-caption {
-      font-size: 13px;
+      font-size: var(--text-caption);
       color: var(--h-gray-1);
     }
 
@@ -1450,7 +1429,7 @@
       align-items: center;
       gap: 10px;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -1465,7 +1444,7 @@
     }
     .chrome-right {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       letter-spacing: 0.08em;
       color: var(--pl-ink-3);
@@ -1479,7 +1458,7 @@
       border-top: 1px solid var(--pl-line);
       background: var(--hw-card-bg);
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -1520,7 +1499,7 @@
       gap: 14px;
       align-items: center;
       padding: 13px 22px;
-      font-size: 13px;
+      font-size: var(--text-caption);
       color: var(--pl-ink);
       border-bottom: 1px solid rgba(26, 26, 24, 0.04);
       flex-shrink: 0;
@@ -1529,10 +1508,10 @@
     .feed-row.live .study-name { font-weight: 500; }
     .pl-status { width: 6px; height: 6px; border-radius: 50%; background: rgba(26, 26, 24, 0.18); }
     .feed-row.live .pl-status { background: var(--pl-green); box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.18); }
-    .study-name { font-size: 13px; letter-spacing: -0.005em; }
+    .study-name { font-size: var(--text-caption); letter-spacing: -0.005em; }
     .pl-meta {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: var(--text-micro);
       letter-spacing: 0.06em;
       color: var(--pl-ink-3);
       text-transform: uppercase;
@@ -1576,7 +1555,7 @@
       position: relative;
       z-index: 1;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
+      font-size: var(--text-nano);
       color: white;
       letter-spacing: 0.08em;
       background: rgba(26, 26, 24, 0.6);
@@ -1606,13 +1585,13 @@
       display: grid;
       grid-template-columns: 40px 1fr;
       gap: 14px;
-      font-size: 13px;
+      font-size: var(--text-caption);
       line-height: 1.5;
       color: var(--pl-ink);
     }
     .caption-line .who {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
+      font-size: var(--text-nano);
       color: var(--pl-ink-3);
       letter-spacing: 0.08em;
       padding-top: 3px;
@@ -1640,7 +1619,7 @@
     }
     .lmv-metric-label {
       font-family: var(--h-font-mono);
-      font-size: 8px;
+      font-size: var(--text-pico);
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -1648,7 +1627,7 @@
       margin-bottom: 6px;
     }
     .lmv-metric-num {
-      font-size: 22px;
+      font-size: var(--text-feature);
       font-weight: 500;
       color: var(--pl-ink);
       line-height: 1;
@@ -1658,7 +1637,7 @@
     }
     .lmv-metric-sub {
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       font-weight: 500;
       letter-spacing: 0.06em;
       color: var(--pl-ink-3);
@@ -1680,7 +1659,7 @@
     }
     .lmv-section-label {
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -1706,7 +1685,7 @@
     .lmv-q-left { flex: 1; min-width: 0; }
     .lmv-q-time {
       font-family: var(--h-font-mono);
-      font-size: 8px;
+      font-size: var(--text-pico);
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -1715,7 +1694,7 @@
     }
     .lmv-q-card.lmv-q-active .lmv-q-time { color: var(--pl-ink-3); }
     .lmv-q-question {
-      font-size: 13px;
+      font-size: var(--text-caption);
       font-weight: 500;
       color: var(--pl-ink);
       letter-spacing: -0.005em;
@@ -1723,7 +1702,7 @@
       margin-bottom: 4px;
     }
     .lmv-q-answer {
-      font-size: 12px;
+      font-size: var(--text-meta);
       color: var(--pl-ink-2);
       line-height: 1.45;
     }
@@ -1739,7 +1718,7 @@
     .lmv-q-viz svg { display: block; }
     .lmv-q-viz-label {
       font-family: var(--h-font-mono);
-      font-size: 8px;
+      font-size: var(--text-pico);
       font-weight: 500;
       letter-spacing: 0.06em;
       color: var(--pl-ink-3);
@@ -1755,7 +1734,7 @@
       height: 100%;
     }
     .dec-headline {
-      font-size: 11px;
+      font-size: var(--text-mini);
       color: var(--pl-ink-3);
       font-family: 'IBM Plex Mono', monospace;
       letter-spacing: 0.1em;
@@ -1763,7 +1742,7 @@
       margin-bottom: 12px;
     }
     .dec-answer {
-      font-size: 21px;
+      font-size: var(--text-feature);
       font-weight: 500;
       line-height: 1.32;
       color: var(--pl-ink);
@@ -1774,7 +1753,7 @@
     }
     .dec-section-label {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
+      font-size: var(--text-nano);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--pl-ink-3);
@@ -1791,7 +1770,7 @@
       grid-template-columns: 110px 1fr 40px;
       gap: 16px;
       align-items: center;
-      font-size: 12.5px;
+      font-size: var(--text-meta);
     }
     .reason-label { color: var(--pl-ink); }
     .reason-bar {
@@ -1808,7 +1787,7 @@
     .reason.primary .reason-bar-fill { background: var(--pl-green); }
     .reason-pct {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: var(--text-micro);
       color: var(--pl-ink-2);
       text-align: right;
     }
@@ -1831,13 +1810,13 @@
     }
     .dec-meta-label {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
+      font-size: var(--text-nano);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--pl-ink-3);
     }
     .dec-meta-value {
-      font-size: 18px;
+      font-size: var(--text-lead);
       font-weight: 500;
       color: var(--pl-ink);
       letter-spacing: -0.01em;
@@ -1854,13 +1833,13 @@
     }
     .rec-icon {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 16px;
+      font-size: var(--text-body);
       color: var(--pl-green);
       line-height: 1.5;
       font-weight: 500;
     }
     .rec-text {
-      font-size: 13.5px;
+      font-size: var(--text-small);
       line-height: 1.55;
       color: var(--pl-ink);
       letter-spacing: -0.005em;
@@ -1895,7 +1874,7 @@
       box-shadow: none;
     }
     .pl-card-num {
-      font-size: 0.75rem;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--pl-ink-3);
       margin-bottom: 0.35rem;
@@ -1904,7 +1883,7 @@
     }
     .pl-card.active .pl-card-num { color: var(--pl-ink-2); }
     .pl-card-title {
-      font-size: 18px;
+      font-size: var(--text-lead);
       font-weight: 500;
       color: var(--pl-ink);
       letter-spacing: -0.01em;
@@ -1912,7 +1891,7 @@
       line-height: 1.3;
     }
     .pl-card-body {
-      font-size: 14px;
+      font-size: var(--text-small);
       line-height: 1.55;
       color: var(--pl-ink-2);
     }
@@ -2000,7 +1979,7 @@
     }
     .hw-prompt-text {
       font-family: var(--h-font-sans);
-      font-size: 15px;
+      font-size: var(--text-body);
       font-weight: 400;
       color: var(--h-ink);
       line-height: 1.55;
@@ -2022,7 +2001,7 @@
       border: 1px solid var(--h-line);
       background: transparent;
       font-family: var(--h-font-sans);
-      font-size: 13px;
+      font-size: var(--text-caption);
       font-weight: 500;
       color: var(--h-gray-1);
       cursor: default;
@@ -2060,7 +2039,7 @@
     .hw-v-section:last-child { border-bottom: none; padding-bottom: 0; }
     .hw-v-label {
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -2075,7 +2054,7 @@
     .hw-v-chip {
       padding: 7px 14px;
       border-radius: 999px;
-      font-size: 12.5px;
+      font-size: var(--text-meta);
       font-weight: 500;
       border: 1px solid var(--h-line);
       color: var(--h-gray-1);
@@ -2093,13 +2072,13 @@
       justify-content: space-between;
     }
     .hw-v-scale-num {
-      font-size: 28px;
+      font-size: var(--text-title);
       font-weight: 600;
       color: var(--h-ink);
       line-height: 1;
     }
     .hw-v-scale-caption {
-      font-size: 12px;
+      font-size: var(--text-meta);
       color: var(--h-gray-2);
       margin-top: 2px;
     }
@@ -2118,7 +2097,7 @@
       width: 100%;
       padding: 10px 0;
       text-align: center;
-      font-size: 13px;
+      font-size: var(--text-caption);
       font-weight: 500;
       color: var(--coral);
       border: 1px solid var(--coral);
@@ -2157,7 +2136,7 @@
       background: rgba(0,0,0,0.55);
       color: #fff;
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -2202,7 +2181,7 @@
     .hw-v-bar-dots span:nth-child(2) { animation-delay: -0.16s; }
     @keyframes hwVDot { 0%,80%,100%{transform:scale(0);opacity:0.5} 40%{transform:scale(1);opacity:1} }
     .hw-v-bar-text {
-      font-size: 12.5px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--h-ink);
       white-space: nowrap;
@@ -2218,7 +2197,7 @@
     }
     .hw-v-insight-label {
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -2226,7 +2205,7 @@
       margin-bottom: 6px;
     }
     .hw-v-insight-text {
-      font-size: 12px;
+      font-size: var(--text-meta);
       color: var(--h-ink);
       line-height: 1.45;
     }
@@ -2260,7 +2239,7 @@
     }
     .hw-v-report-header {
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -2275,7 +2254,7 @@
     }
     .hw-v-finding:last-child { margin-bottom: 0; }
     .hw-v-finding-label {
-      font-size: 12px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--h-ink);
       min-width: 0;
@@ -2283,7 +2262,7 @@
     }
     .hw-v-finding-pct {
       font-family: var(--h-font-mono);
-      font-size: 11px;
+      font-size: var(--text-mini);
       color: var(--h-gray-2);
       flex-shrink: 0;
       width: 30px;
@@ -2312,14 +2291,14 @@
     .hw-v-quote-text {
       font-family: 'IBM Plex Serif', serif;
       font-style: italic;
-      font-size: 12.5px;
+      font-size: var(--text-meta);
       line-height: 1.5;
       color: var(--h-ink);
       margin-bottom: 8px;
     }
     .hw-v-quote-attr {
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       color: var(--h-gray-3);
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -2337,17 +2316,17 @@
     }
 
     .step-title {
-      font-size: 18px;
+      font-size: var(--text-card);
       font-weight: 500;
       letter-spacing: -0.015em;
       color: var(--h-ink);
-      line-height: 1.25;
+      line-height: var(--text-card-lh);
       margin-bottom: 10px;
     }
 
     .step-desc {
-      font-size: 13.5px;
-      line-height: 1.55;
+      font-size: var(--text-body);
+      line-height: var(--text-body-lh);
       color: var(--h-gray-1);
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -2380,7 +2359,7 @@
 
     .composer-label {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -2389,7 +2368,7 @@
     }
 
     .composer-input {
-      font-size: 15px;
+      font-size: var(--text-body);
       color: var(--h-ink);
       line-height: 1.5;
       margin-bottom: 14px;
@@ -2419,7 +2398,7 @@
       align-items: center;
       gap: 6px;
       font-family: var(--h-font-mono);
-      font-size: 11px;
+      font-size: var(--text-mini);
       font-weight: 500;
       color: var(--h-gray-2);
       cursor: default;
@@ -2481,7 +2460,7 @@
     .mini-label {
       display: block;
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -2498,7 +2477,7 @@
     .recruit-chip {
       padding: 6px 14px;
       border-radius: 999px;
-      font-size: 13px;
+      font-size: var(--text-caption);
       font-weight: 500;
       border: 1px solid var(--h-line);
       color: var(--h-gray-1);
@@ -2520,7 +2499,7 @@
       padding: 8px 0;
       text-align: center;
       font-family: var(--h-font-sans);
-      font-size: 12px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--coral);
       border: 1px solid var(--coral);
@@ -2537,14 +2516,14 @@
 
     .recruit-scale-num {
       font-family: var(--h-font-sans);
-      font-size: 22px;
+      font-size: var(--text-feature);
       font-weight: 600;
       color: var(--h-ink);
       line-height: 1;
     }
 
     .recruit-scale-label {
-      font-size: 12px;
+      font-size: var(--text-meta);
       color: var(--h-gray-2);
       margin-top: 2px;
     }
@@ -2588,7 +2567,7 @@
     }
     .session-name {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       color: var(--h-ink);
       display: flex;
@@ -2597,7 +2576,7 @@
     }
     .session-time {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       color: var(--h-gray-3);
     }
     .session-dot {
@@ -2648,7 +2627,7 @@
       border: 1px solid var(--h-line);
       border-radius: 8px;
       padding: 8px 10px;
-      font-size: 11px;
+      font-size: var(--text-mini);
       line-height: 1.45;
       color: var(--h-ink);
       box-shadow: 0 4px 12px -3px rgba(0,0,0,0.1);
@@ -2657,7 +2636,7 @@
 
     .insight-label {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: .08em;
@@ -2667,7 +2646,7 @@
     }
 
     .insight-text {
-      font-size: 13px;
+      font-size: var(--text-caption);
       line-height: 1.45;
       color: var(--h-ink);
     }
@@ -2700,14 +2679,14 @@
 
     .answer-num {
       font-family: var(--h-font-sans);
-      font-size: 36px;
+      font-size: var(--text-section);
       font-weight: 600;
       color: var(--h-ink);
       line-height: 1;
     }
 
     .answer-caption {
-      font-size: 12px;
+      font-size: var(--text-meta);
       color: var(--h-gray-2);
       margin-top: 4px;
     }
@@ -2726,7 +2705,7 @@
     }
 
     .answer-bar-label {
-      font-size: 12px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--h-ink-2);
       min-width: 72px;
@@ -2762,7 +2741,7 @@
       box-shadow: 0 2px 8px -2px rgba(0,0,0,0.06);
     }
     .answer-quote__text {
-      font-size: 12.5px;
+      font-size: var(--text-meta);
       font-style: italic;
       line-height: 1.5;
       color: var(--h-ink);
@@ -2770,13 +2749,13 @@
     }
     .answer-quote__attr {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       color: var(--h-gray-3);
     }
 
     .answer-bar-pct {
       font-family: var(--h-font-mono);
-      font-size: 11px;
+      font-size: var(--text-mini);
       color: var(--h-gray-2);
       min-width: 28px;
       text-align: right;
@@ -2815,7 +2794,7 @@
     }
     .tech-tab {
       font-family: var(--h-font-sans);
-      font-size: 13.5px;
+      font-size: var(--text-small);
       font-weight: 500;
       color: var(--h-gray-1);
       padding: 8px 18px;
@@ -2904,14 +2883,14 @@
       display: none;
     }
     .tech-box-pos {
-      font-size: 15px;
+      font-size: var(--text-body);
       font-weight: 500;
       color: var(--h-ink);
       line-height: 1.45;
       margin-bottom: 10px;
     }
     .tech-box-desc {
-      font-size: 13.5px;
+      font-size: var(--text-small);
       color: var(--h-gray-1);
       line-height: 1.55;
     }
@@ -2931,7 +2910,7 @@
     .tech-cap-row:last-child { border-bottom: none; }
     .tech-cap-num {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       color: var(--h-gray-1);
       letter-spacing: 0.08em;
       min-width: 20px;
@@ -2939,13 +2918,13 @@
     }
     .tech-cap-content { flex: 1; }
     .tech-cap-name {
-      font-size: 14px;
+      font-size: var(--text-small);
       font-weight: 500;
       color: var(--h-ink);
       margin-bottom: 4px;
     }
     .tech-cap-desc {
-      font-size: 13px;
+      font-size: var(--text-caption);
       color: var(--h-gray-1);
       line-height: 1.5;
     }
@@ -3086,27 +3065,27 @@
       padding: 6px 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       font-family: var(--h-font-sans);
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       color: var(--h-ink);
       white-space: nowrap;
     }
     .cc-mockup-label {
       display: none;
-      font-size: 0.75rem;
+      font-size: var(--text-meta);
       text-transform: capitalize;
       color: var(--h-gray-1);
       margin-bottom: 0.5rem;
     }
     .cc-mockup-q {
-      font-size: 0.875rem;
+      font-size: var(--text-small);
       color: var(--h-ink);
       margin-bottom: 0.5rem;
     }
     .cc-mockup-quote {
       font-family: var(--h-font-sans);
       font-weight: 400;
-      font-size: 12px;
+      font-size: var(--text-meta);
       line-height: 1.4;
       font-style: normal;
       color: var(--h-gray-1);
@@ -3115,7 +3094,7 @@
     }
     .cc-mockup-meta {
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--h-gray-1);
@@ -3131,11 +3110,11 @@
       border-radius: var(--radius-pill);
       background: var(--color-beige);
       border: 1px solid var(--color-divider);
-      font-size: 10px;
+      font-size: var(--text-micro);
       font-weight: 500;
       color: var(--color-dark);
     }
-    .cc-mockup-pill.lg { font-size: 10px; padding: 3px 8px; }
+    .cc-mockup-pill.lg { font-size: var(--text-micro); padding: 3px 8px; }
     .cc-mockup-pill.sage { background: rgba(61,107,94,0.1); border-color: rgba(61,107,94,0.2); color: var(--accent-sage); }
     .cc-mockup-badge {
       display: inline-flex;
@@ -3146,7 +3125,7 @@
       padding: 3px 8px;
       border-radius: var(--radius-tag);
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 8px;
+      font-size: var(--text-pico);
       font-weight: 500;
       color: var(--accent-sage);
       text-transform: uppercase;
@@ -3154,7 +3133,7 @@
     }
     .cc-mockup-check {
       font-family: var(--h-font-sans);
-      font-size: 11px;
+      font-size: var(--text-mini);
       display: flex;
       align-items: center;
       gap: 6px;
@@ -3169,7 +3148,7 @@
       align-items: center;
       gap: 6px;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
+      font-size: var(--text-nano);
       color: var(--color-dark);
     }
     .cc-mockup-bar-track {
@@ -3190,7 +3169,7 @@
       align-items: center;
       gap: 6px;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
+      font-size: var(--text-nano);
       color: var(--color-dark);
       padding: 2px 0;
     }
@@ -3199,7 +3178,7 @@
       padding: 16px 0 24px;
     }
     .cc-cat {
-      font-size: 18px;
+      font-size: var(--text-lead);
       font-weight: 500;
       letter-spacing: -0.015em;
       color: var(--h-ink);
@@ -3207,7 +3186,7 @@
       margin-bottom: 10px;
     }
     .cc-desc {
-      font-size: 13.5px;
+      font-size: var(--text-small);
       color: var(--h-gray-1);
       line-height: 1.55;
     }
@@ -3246,14 +3225,14 @@
       min-height: 440px;
     }
     .sig-card-title {
-      font-size: 17px;
+      font-size: var(--text-lead);
       font-weight: 500;
       letter-spacing: -0.01em;
       color: var(--h-ink);
       margin-bottom: 8px;
     }
     .sig-card-desc {
-      font-size: 13.5px;
+      font-size: var(--text-small);
       color: var(--h-gray-1);
       line-height: 1.55;
       max-width: 420px;
@@ -3283,7 +3262,7 @@
     /* Card 1: Decision drivers */
     .sig-drivers-label {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--h-gray-1);
@@ -3297,7 +3276,7 @@
     }
     .sig-driver-row:last-child { margin-bottom: 0; }
     .sig-driver-name {
-      font-size: 13px;
+      font-size: var(--text-caption);
       font-weight: 500;
       color: var(--h-ink);
       min-width: 120px;
@@ -3331,7 +3310,7 @@
     .sig-driver-fill.sage { background: var(--h-green); }
     .sig-driver-val {
       font-family: var(--h-font-mono);
-      font-size: 12px;
+      font-size: var(--text-meta);
       font-weight: 500;
       color: var(--h-gray-1);
       min-width: 36px;
@@ -3342,7 +3321,7 @@
       background: var(--h-white);
       border: 1px solid var(--h-line);
       border-radius: 12px;
-      font-size: 13px;
+      font-size: var(--text-caption);
       line-height: 1.55;
       color: var(--h-ink);
     }
@@ -3387,14 +3366,14 @@
       bottom: 6px;
       right: 8px;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
+      font-size: var(--text-micro);
       color: rgba(255,255,255,0.85);
       z-index: 2;
     }
     .sig-clip-caption {
       border-left: 2px solid var(--h-ink);
       padding-left: 14px;
-      font-size: 13.5px;
+      font-size: var(--text-small);
       line-height: 1.5;
       color: var(--h-ink);
       font-style: italic;
@@ -3418,14 +3397,14 @@
     .sig-slide.front { top: 10px; left: 10px; z-index: 2; box-shadow: 0 2px 8px -2px rgba(0,0,0,0.06); }
     .sig-slide-header {
       font-family: var(--h-font-mono);
-      font-size: 9px;
+      font-size: var(--text-nano);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--h-gray-1);
       margin-bottom: 6px;
     }
     .sig-slide-title {
-      font-size: 11px;
+      font-size: var(--text-mini);
       font-weight: 600;
       color: var(--h-ink);
       line-height: 1.4;
@@ -3439,13 +3418,13 @@
     }
     .sig-slide-attr {
       font-family: var(--h-font-mono);
-      font-size: 8px;
+      font-size: var(--text-pico);
       color: var(--h-gray-1);
       margin-top: 8px;
     }
     .sig-deck-label {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--h-gray-1);
@@ -3460,7 +3439,7 @@
       max-width: 85%;
       padding: 10px 14px;
       border-radius: 10px;
-      font-size: 12.5px;
+      font-size: var(--text-meta);
       line-height: 1.5;
       color: var(--h-ink);
     }
@@ -3482,7 +3461,7 @@
     }
     .sig-chat-label {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--h-gray-1);
@@ -3509,7 +3488,7 @@
     }
     .sig-chat-input-text {
       flex: 1;
-      font-size: 12px;
+      font-size: var(--text-meta);
       color: var(--h-gray-1);
     }
     .sig-chat-send {
@@ -3522,7 +3501,7 @@
       justify-content: center;
       flex-shrink: 0;
       color: white;
-      font-size: 11px;
+      font-size: var(--text-mini);
       border: none;
     }
 
@@ -3551,13 +3530,13 @@
     }
     .sig-persona-avatar img { width: 100%; height: 100%; object-fit: cover; }
     .sig-persona-name {
-      font-size: 13px;
+      font-size: var(--text-caption);
       font-weight: 500;
       color: var(--h-ink);
     }
     .sig-personas-label {
       font-family: var(--h-font-mono);
-      font-size: 10px;
+      font-size: var(--text-micro);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--h-gray-1);
@@ -3629,7 +3608,7 @@
       max-width: 100%;
     }
     .cta-text-body {
-      font-size: 16px;
+      font-size: var(--text-body);
       line-height: 1.6;
       color: var(--h-gray-1);
       max-width: 640px;
@@ -3647,15 +3626,15 @@
     @media (max-width: 720px) {
       .metrics-grid { grid-template-columns: 1fr; padding: 2rem; }
       .metric-card + .metric-card { border-left: none; border-top: 0.5px solid #ccc8c0; padding-top: 1.5rem; margin-top: 1.5rem; }
-      .metric-card-num { font-size: 44px; }
+      .metric-card-num { font-size: var(--text-metric); }
       .logos-track { animation-duration: 18s; }
       .logo-item { padding: 0 24px; }
       .logo-item img { height: 22px; }
       .pl-row { grid-template-columns: 1fr; gap: 24px; }
       .steps { grid-template-columns: 1fr; gap: 24px; }
       .step-card { aspect-ratio: 16 / 9; }
-      .step-title { font-size: 18px; }
-      .step-desc { font-size: 13px; }
+      .step-title { font-size: var(--text-card); }
+      .step-desc { font-size: var(--text-body); }
       .visual {
         transform: scale(0.85);
         transform-origin: center center;
@@ -3666,7 +3645,7 @@
       .platform > .pl-header,
       .platform > .pl-row { padding-left: 24px; padding-right: 24px; }
       .tech-tab-bar { flex-wrap: wrap; }
-      .tech-tab { font-size: 12px; padding: 7px 14px; }
+      .tech-tab { font-size: var(--text-meta); padding: 7px 14px; }
       .tech-box { padding: 24px; grid-template-columns: 1fr; gap: 24px; }
       .cc { width: 280px; }
       .cases-arrows { display: none; }
@@ -3687,14 +3666,14 @@
         max-width: 100%;
       }
       .h-headline {
-        font-size: 32px;
+        font-size: var(--text-hero);
         line-height: 1.15;
       }
       .h-sub {
-        font-size: 14px;
+        font-size: var(--text-body);
       }
       .h-eyebrow {
-        font-size: 9px;
+        font-size: var(--text-micro);
       }
       .showcase-wrap {
         position: relative;
@@ -3711,7 +3690,7 @@
         padding: 40px 24px 32px;
       }
       .h-cta-row .btn {
-        font-size: 0.8rem;
+        font-size: var(--text-meta);
         padding: 0.6rem 1rem;
         height: 40px;
       }
@@ -3777,7 +3756,7 @@
       <a href="#">Pricing</a>
     </div>
     <div class="nav-actions">
-      <a href="#" class="btn btn-ghost btn-sm">Sign in</a>
+      <a href="https://convo.build" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Sign in</a>
       <a href="contact-us.html" class="btn btn-primary btn-sm">Book a demo</a>
     </div>
     <button class="nav-toggle" aria-label="Menu" id="navToggle">
@@ -3790,7 +3769,7 @@
     <a href="#">Clients</a>
     <a href="#">Pricing</a>
     <div class="nav-mobile-buttons">
-      <a href="#" class="btn btn-ghost">Sign in</a>
+      <a href="https://convo.build" target="_blank" rel="noopener" class="btn btn-ghost">Sign in</a>
       <a href="contact-us.html" class="btn btn-primary">Book a demo</a>
     </div>
   </div>
@@ -4385,14 +4364,14 @@
     .ds-title {
       font-family: var(--serif);
       font-style: italic;
-      font-size: 1.25rem;
+      font-size: var(--text-card);
       color: var(--ink);
       line-height: 1.3;
     }
     
     .ds-label {
       font-family: var(--mono);
-      font-size: 0.65rem;
+      font-size: var(--text-micro);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -4401,7 +4380,7 @@
   
     .ds-desc {
       font-family: var(--sans);
-      font-size: 0.85rem;
+      font-size: var(--text-small);
       color: var(--ink-muted);
       line-height: 1.4;
     }
@@ -4439,7 +4418,7 @@
       border: 1px solid var(--border);
       background: var(--surface);
       font-family: var(--sans);
-      font-size: 0.85rem;
+      font-size: var(--text-small);
       color: var(--ink);
       outline: none;
       transition: all 0.2s ease;
@@ -4463,7 +4442,7 @@
       border: 1px solid var(--border);
       background: var(--surface);
       font-family: var(--sans);
-      font-size: 0.85rem;
+      font-size: var(--text-small);
       color: var(--ink);
       appearance: none;
       cursor: pointer;
@@ -4478,7 +4457,7 @@
       border-radius: var(--radius-lg);
       border: none;
       font-family: var(--sans);
-      font-size: 0.95rem;
+      font-size: var(--text-body);
       font-weight: 500;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -4519,7 +4498,7 @@
     
     .ds-tag {
       font-family: var(--sans);
-      font-size: 0.75rem;
+      font-size: var(--text-meta);
       padding: 0.4rem 0.75rem;
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
@@ -4748,8 +4727,8 @@
     :root {
       --bg-main: #f3efe8;
       --bg-card: #ffffff;
-      --text-primary: #000000;
-      --text-meta: #333333;
+      --fg-text: #000000;
+      --fg-muted: #333333;
       --accent-1: #c44b25;
       --accent-2: #e87b5d;
       --accent-3: #f1a28a;
@@ -4768,7 +4747,7 @@
       justify-content: center;
       align-items: center;
       font-family: 'IBM Plex Sans', sans-serif;
-      color: var(--text-primary);
+      color: var(--fg-text);
       box-sizing: border-box;
     }
   
@@ -4817,17 +4796,17 @@
 
     .fg-card-title {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6rem;
+      font-size: var(--text-nano);
       text-transform: uppercase;
-      color: var(--text-meta);
+      color: var(--fg-muted);
       margin-bottom: 0.35rem;
       letter-spacing: 0.05em;
     }
 
     .fg-card-text {
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 0.8rem;
-      color: var(--text-primary);
+      font-size: var(--text-meta);
+      color: var(--fg-text);
       line-height: 1.4;
       white-space: nowrap;
     }
@@ -4835,8 +4814,8 @@
     .fg-card-insight {
       font-family: 'IBM Plex Serif', serif;
       font-style: italic;
-      font-size: 0.85rem;
-      color: var(--text-primary);
+      font-size: var(--text-small);
+      color: var(--fg-text);
       line-height: 1.4;
       white-space: nowrap;
     }
@@ -4901,8 +4880,8 @@
 
     .ai-text {
       font-family: 'IBM Plex Sans', sans-serif;
-      color: var(--text-primary);
-      font-size: 0.75rem;
+      color: var(--fg-text);
+      font-size: var(--text-meta);
       font-weight: 500;
       white-space: nowrap;
     }
@@ -4911,7 +4890,7 @@
       display: inline-block;
       width: 2px;
       height: 16px;
-      background-color: var(--text-primary);
+      background-color: var(--fg-text);
       margin-left: 3px;
       animation: blink 1s infinite;
     }
@@ -4932,7 +4911,7 @@
     }
     .wave-bar {
       width: 3px;
-      background-color: var(--text-meta);
+      background-color: var(--fg-muted);
       border-radius: 4px;
       animation: sound 1.2s infinite ease-in-out;
     }
@@ -4948,7 +4927,7 @@
     .dot {
       width: 5px;
       height: 5px;
-      background-color: var(--text-meta);
+      background-color: var(--fg-muted);
       border-radius: 50%;
       animation: pulse 1.4s infinite ease-in-out both;
     }
@@ -5353,7 +5332,7 @@
 
   .video-prompt {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: var(--text-small);
     font-weight: 500;
     margin-bottom: 1rem;
     padding: 0 0.5rem;
@@ -5399,7 +5378,7 @@
   .chart-title {
     font-family: 'IBM Plex Serif', serif;
     font-style: italic;
-    font-size: 0.95rem;
+    font-size: var(--text-body);
     margin-bottom: 1rem;
     color: #000000;
   }
@@ -5410,7 +5389,7 @@
   .bar-labels {
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
+    font-size: var(--text-meta);
     margin-bottom: 0.3rem;
     font-weight: 500;
     color: #000000;
@@ -5441,7 +5420,7 @@
   .quote-text {
     font-family: 'IBM Plex Serif', serif;
     font-style: italic;
-    font-size: 0.8rem; 
+    font-size: var(--text-meta); 
     line-height: 1.4;
     color: #000000;
   }
@@ -5459,7 +5438,7 @@
     align-items: center;
     gap: 0.4rem;
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: var(--text-meta);
     border-radius: 100px;
     z-index: 25;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
@@ -5739,7 +5718,7 @@
           <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="">
           <div class="cc-stack pos-tr">
             <div class="cc-chip">n=312 buyers</div>
-            <div class="cc-mockup"><div class="cc-mockup-q">Which claim resonates most?</div><div class="cc-mockup-meta" style="margin-top:8px; font-size:9px;"><div style="display:flex; justify-content:space-between; margin-bottom:4px;"><span>"Clean ingredients"</span><span style="font-weight:600;">72%</span></div><div style="height:4px; background:#ebe4d9; border-radius:4px; overflow:hidden;"><div style="height:100%; width:72%; background:#c44b25; border-radius:4px;"></div></div><div style="display:flex; justify-content:space-between; margin-top:6px; margin-bottom:4px;"><span>"Science-backed"</span><span style="font-weight:600;">41%</span></div><div style="height:4px; background:#ebe4d9; border-radius:4px; overflow:hidden;"><div style="height:100%; width:41%; background:#e87b5d; border-radius:4px;"></div></div></div></div>
+            <div class="cc-mockup"><div class="cc-mockup-q">Which claim resonates most?</div><div class="cc-mockup-meta" style="margin-top:8px; font-size: var(--text-nano);"><div style="display:flex; justify-content:space-between; margin-bottom:4px;"><span>"Clean ingredients"</span><span style="font-weight:600;">72%</span></div><div style="height:4px; background:#ebe4d9; border-radius:4px; overflow:hidden;"><div style="height:100%; width:72%; background:#c44b25; border-radius:4px;"></div></div><div style="display:flex; justify-content:space-between; margin-top:6px; margin-bottom:4px;"><span>"Science-backed"</span><span style="font-weight:600;">41%</span></div><div style="height:4px; background:#ebe4d9; border-radius:4px; overflow:hidden;"><div style="height:100%; width:41%; background:#e87b5d; border-radius:4px;"></div></div></div></div>
           </div>
         </div>
         <div class="cc-footer"><div class="cc-cat">Claims testing</div><div class="cc-desc">Which claim drives purchase intent? Rank them with real buyers, not a survey.</div></div>
@@ -5761,7 +5740,7 @@
           <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80" alt="">
           <div class="cc-stack pos-tl">
             <div class="cc-chip">Week 1 &rarr; Week 4</div>
-            <div class="cc-mockup"><div class="cc-mockup-q">What do first-time buyers notice?</div><div class="cc-mockup-meta" style="margin-top:8px;"><svg width="100" height="32" viewBox="0 0 100 32"><path d="M4 28 C20 24 36 18 52 12 Q68 6 96 4" stroke="#10b981" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="96" cy="4" r="3" fill="#10b981"/></svg><div style="font-size:10px; color:#10b981; margin-top:2px;">+34% unaided recall</div></div></div>
+            <div class="cc-mockup"><div class="cc-mockup-q">What do first-time buyers notice?</div><div class="cc-mockup-meta" style="margin-top:8px;"><svg width="100" height="32" viewBox="0 0 100 32"><path d="M4 28 C20 24 36 18 52 12 Q68 6 96 4" stroke="#10b981" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="96" cy="4" r="3" fill="#10b981"/></svg><div style="font-size: var(--text-micro); color:#10b981; margin-top:2px;">+34% unaided recall</div></div></div>
           </div>
         </div>
         <div class="cc-footer"><div class="cc-cat">New market entry</div><div class="cc-desc">Entering a category cold? Learn what registers before you spend the media budget.</div></div>
@@ -5783,7 +5762,7 @@
           <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="">
           <div class="cc-stack pos-tr">
             <div class="cc-chip">Cohort analysis</div>
-            <div class="cc-mockup"><div class="cc-mockup-q">When do subscribers drop off?</div><div class="cc-mockup-meta" style="display:flex; gap:4px; margin-top:8px; align-items:flex-end;"><div style="text-align:center;"><svg width="14" height="28"><rect y="0" width="14" height="28" rx="2" fill="#c44b25" opacity="0.9"/></svg><div style="font-size:8px; color:#999; margin-top:2px;">M1</div></div><div style="text-align:center;"><svg width="14" height="28"><rect y="6" width="14" height="22" rx="2" fill="#c44b25" opacity="0.7"/></svg><div style="font-size:8px; color:#999; margin-top:2px;">M2</div></div><div style="text-align:center;"><svg width="14" height="28"><rect y="14" width="14" height="14" rx="2" fill="#c44b25" opacity="0.45"/></svg><div style="font-size:8px; color:#999; margin-top:2px;">M3</div></div><div style="text-align:center;"><svg width="14" height="28"><rect y="20" width="14" height="8" rx="2" fill="#c44b25" opacity="0.25"/></svg><div style="font-size:8px; color:#999; margin-top:2px;">M4</div></div></div></div>
+            <div class="cc-mockup"><div class="cc-mockup-q">When do subscribers drop off?</div><div class="cc-mockup-meta" style="display:flex; gap:4px; margin-top:8px; align-items:flex-end;"><div style="text-align:center;"><svg width="14" height="28"><rect y="0" width="14" height="28" rx="2" fill="#c44b25" opacity="0.9"/></svg><div style="font-size: var(--text-pico); color:#999; margin-top:2px;">M1</div></div><div style="text-align:center;"><svg width="14" height="28"><rect y="6" width="14" height="22" rx="2" fill="#c44b25" opacity="0.7"/></svg><div style="font-size: var(--text-pico); color:#999; margin-top:2px;">M2</div></div><div style="text-align:center;"><svg width="14" height="28"><rect y="14" width="14" height="14" rx="2" fill="#c44b25" opacity="0.45"/></svg><div style="font-size: var(--text-pico); color:#999; margin-top:2px;">M3</div></div><div style="text-align:center;"><svg width="14" height="28"><rect y="20" width="14" height="8" rx="2" fill="#c44b25" opacity="0.25"/></svg><div style="font-size: var(--text-pico); color:#999; margin-top:2px;">M4</div></div></div></div>
           </div>
         </div>
         <div class="cc-footer"><div class="cc-cat">Subscription &amp; retention</div><div class="cc-desc">What makes subscribers cancel after month three? Find the friction before it hits your P&amp;L.</div></div>
@@ -5794,7 +5773,7 @@
           <img src="https://images.unsplash.com/photo-1521123845560-14093637aa7d?w=600&q=80" alt="">
           <div class="cc-stack pos-tl">
             <div class="cc-chip">Same study, all markets</div>
-            <div class="cc-mockup"><div class="cc-mockup-q">Does this positioning translate?</div><div class="cc-mockup-meta" style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;"><span style="font-size:10px; padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">EN</span><span style="font-size:10px; padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">ES</span><span style="font-size:10px; padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">DE</span><span style="font-size:10px; padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">JP</span><span style="font-size:10px; padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">PT-BR</span></div></div>
+            <div class="cc-mockup"><div class="cc-mockup-q">Does this positioning translate?</div><div class="cc-mockup-meta" style="display:flex; flex-wrap:wrap; gap:4px; margin-top:8px;"><span style="font-size: var(--text-micro); padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">EN</span><span style="font-size: var(--text-micro); padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">ES</span><span style="font-size: var(--text-micro); padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">DE</span><span style="font-size: var(--text-micro); padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">JP</span><span style="font-size: var(--text-micro); padding:3px 8px; background:#f3efe8; border-radius:4px; font-weight:500;">PT-BR</span></div></div>
           </div>
         </div>
         <div class="cc-footer"><div class="cc-cat">Global launch validation</div><div class="cc-desc">Does this positioning translate? Run the same study in twelve languages in one week.</div></div>
@@ -5805,7 +5784,7 @@
           <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="">
           <div class="cc-stack pos-br">
             <div class="cc-chip">Pricing study</div>
-            <div class="cc-mockup"><div class="cc-mockup-q">Will this feature justify the upgrade?</div><div class="cc-mockup-meta" style="margin-top:8px; font-size:10px;"><div style="display:flex; align-items:center; gap:6px;"><span style="color:#10b981; font-weight:700;">67%</span><span>would upgrade</span></div><div style="height:1px; background:#ebe4d9; margin:6px 0;"></div><div style="display:flex; align-items:center; gap:6px;"><span style="color:#c44b25; font-weight:700;">22%</span><span>need more proof</span></div><div style="height:1px; background:#ebe4d9; margin:6px 0;"></div><div style="display:flex; align-items:center; gap:6px;"><span style="color:#999; font-weight:700;">11%</span><span>would downgrade</span></div></div></div>
+            <div class="cc-mockup"><div class="cc-mockup-q">Will this feature justify the upgrade?</div><div class="cc-mockup-meta" style="margin-top:8px; font-size: var(--text-micro);"><div style="display:flex; align-items:center; gap:6px;"><span style="color:#10b981; font-weight:700;">67%</span><span>would upgrade</span></div><div style="height:1px; background:#ebe4d9; margin:6px 0;"></div><div style="display:flex; align-items:center; gap:6px;"><span style="color:#c44b25; font-weight:700;">22%</span><span>need more proof</span></div><div style="height:1px; background:#ebe4d9; margin:6px 0;"></div><div style="display:flex; align-items:center; gap:6px;"><span style="color:#999; font-weight:700;">11%</span><span>would downgrade</span></div></div></div>
           </div>
         </div>
         <div class="cc-footer"><div class="cc-cat">Pricing &amp; tier validation</div><div class="cc-desc">Does your premium tier deliver enough value to justify the price jump? Ask before you ship.</div></div>

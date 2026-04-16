@@ -64,7 +64,6 @@
       --sub-to-content: 64px;
       --ds-card-gap: 24px;
       --ds-card-pad: 32px;
-      --ds-card-bg: #F4F2EC;
       --ds-card-radius: 12px;
       --eyebrow-color: #6B6B6B;
     }
@@ -1325,6 +1324,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       background: var(--hw-card-bg);
+      border: 1px solid var(--h-line);
       border-radius: var(--ds-card-radius);
       padding: 2.5rem 3rem;
     }
@@ -3204,7 +3204,8 @@
       gap: var(--ds-card-gap);
     }
     .sig-card {
-      background: var(--ds-card-bg);
+      background: var(--hw-card-bg);
+      border: 1px solid var(--h-line);
       border-radius: var(--ds-card-radius);
       padding: var(--ds-card-pad);
       display: flex;

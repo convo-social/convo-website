@@ -33,6 +33,10 @@ See `.env.example`. Required for full functionality:
 
 - `NEXT_PUBLIC_SEGMENT_WRITE_KEY` — Segment source key for analytics.js (has a baked-in default)
 - `NEXT_PUBLIC_CALENDLY_URL` — Calendly link opened after the contact form submits
+- `NEXT_PUBLIC_SITE_URL` — public origin used for canonical URLs, OG tags, sitemap.xml, robots.txt
+
+Drop a 1200×630 `public/og-image.png` for social share previews (the root metadata
+points at this path).
 
 ## Project layout
 
@@ -63,7 +67,6 @@ lib/
   fonts.ts               # next/font declarations
   analytics.ts           # window.analytics wrapper with types
 public/images/           # static images served at /images/*
-_legacy/                 # previous static-HTML site, kept for diff during migration
 ```
 
 ## Deploying to Vercel

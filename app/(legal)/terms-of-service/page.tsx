@@ -5,6 +5,7 @@ import { LegalPage, LegalUpdated } from "@/components/legal/LegalPage";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms that govern your access to and use of the Humanize services.",
+  alternates: { canonical: "/terms-of-service" },
 };
 
 export default function TermsOfServicePage() {

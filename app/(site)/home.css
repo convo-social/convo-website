@@ -441,6 +441,7 @@
     }
 
     .concept-thumb {
+      position: relative;
       width: 100%;
       aspect-ratio: 2 / 1;
       border-radius: 6px;

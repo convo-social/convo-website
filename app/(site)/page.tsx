@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { HomeInteractions } from "@/components/home/HomeInteractions";
 import "./home.css";
 
@@ -97,14 +98,14 @@ export default function Home() {
               <div className="concept-grid">
                 <div className="concept winner">
                   <div className="winner-tag">Winner</div>
-                  <div className="concept-thumb"><img src="/images/Gemini_Generated_Image_u07bd8u07bd8u07b.png" alt="Concept A" style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "inherit"}} /></div>
+                  <div className="concept-thumb"><Image src="/images/Gemini_Generated_Image_u07bd8u07bd8u07b.png" alt="Concept A" fill sizes="(max-width: 991px) 40vw, 180px" style={{objectFit: "cover", borderRadius: "inherit"}} /></div>
                   <div className="concept-meta">
                     <span className="concept-name">Concept A</span>
                     <span className="concept-pct">71%</span>
                   </div>
                 </div>
                 <div className="concept">
-                  <div className="concept-thumb"><img src="/images/Gemini_Generated_Image_vfq8xjvfq8xjvfq8.png" alt="Concept B" style={{width: "100%", height: "100%", objectFit: "cover", borderRadius: "inherit"}} /></div>
+                  <div className="concept-thumb"><Image src="/images/Gemini_Generated_Image_vfq8xjvfq8xjvfq8.png" alt="Concept B" fill sizes="(max-width: 991px) 40vw, 180px" style={{objectFit: "cover", borderRadius: "inherit"}} /></div>
                   <div className="concept-meta">
                     <span className="concept-name">Concept B</span>
                     <span className="concept-pct">29%</span>
@@ -546,9 +547,9 @@ export default function Home() {
       <div className="ds-card ds-float ds-float-3 ds-anim ds-delay-3">
         <div className="ds-label" style={{marginBottom: "0.5rem"}}>Target Demographics</div>
         <div className="ds-avatar-row">
-          <img src="/images/happy-smiling-and-a-portrait-of-woman-at-work-and-2026-03-25-06-52-33-utc.jpg" className="ds-avatar" alt="Participant" />
-          <img src="/images/laughing-young-designer-standing-in-an-office-afte-2026-03-09-04-33-22-utc.jpg" className="ds-avatar" alt="Participant" />
-          <img src="/images/portrait-woman-and-smile-with-professional-with-p-2026-03-25-05-19-01-utc.jpg" className="ds-avatar" alt="Participant" />
+          <Image src="/images/happy-smiling-and-a-portrait-of-woman-at-work-and-2026-03-25-06-52-33-utc.jpg" className="ds-avatar" alt="Participant" width={32} height={32} />
+          <Image src="/images/laughing-young-designer-standing-in-an-office-afte-2026-03-09-04-33-22-utc.jpg" className="ds-avatar" alt="Participant" width={32} height={32} />
+          <Image src="/images/portrait-woman-and-smile-with-professional-with-p-2026-03-25-05-19-01-utc.jpg" className="ds-avatar" alt="Participant" width={32} height={32} />
         </div>
         <div className="ds-tags" id="ds-tags-container">
           <div className="ds-tag" id="ds-tag-1">Gen Z</div>
@@ -770,9 +771,9 @@ export default function Home() {
         <div className="sig-card-desc">Real customer profiles your data revealed, not made-up archetypes.</div>
         <div className="sig-card-widget">
           <div className="sig-personas">
-            <div className="sig-persona"><div className="sig-persona-avatar"><img src="/images/happy-smiling-and-a-portrait-of-woman-at-work-and-2026-03-25-06-52-33-utc.jpg" alt="Cautious sampler" /></div><div className="sig-persona-name">Cautious sampler</div></div>
-            <div className="sig-persona"><div className="sig-persona-avatar"><img src="/images/laughing-young-designer-standing-in-an-office-afte-2026-03-09-04-33-22-utc.jpg" alt="Brand loyalist" /></div><div className="sig-persona-name">Brand loyalist</div></div>
-            <div className="sig-persona"><div className="sig-persona-avatar"><img src="/images/portrait-woman-and-smile-with-professional-with-p-2026-03-25-05-19-01-utc.jpg" alt="Price switcher" /></div><div className="sig-persona-name">Price switcher</div></div>
+            <div className="sig-persona"><div className="sig-persona-avatar"><Image src="/images/happy-smiling-and-a-portrait-of-woman-at-work-and-2026-03-25-06-52-33-utc.jpg" alt="Cautious sampler" width={36} height={36} /></div><div className="sig-persona-name">Cautious sampler</div></div>
+            <div className="sig-persona"><div className="sig-persona-avatar"><Image src="/images/laughing-young-designer-standing-in-an-office-afte-2026-03-09-04-33-22-utc.jpg" alt="Brand loyalist" width={36} height={36} /></div><div className="sig-persona-name">Brand loyalist</div></div>
+            <div className="sig-persona"><div className="sig-persona-avatar"><Image src="/images/portrait-woman-and-smile-with-professional-with-p-2026-03-25-05-19-01-utc.jpg" alt="Price switcher" width={36} height={36} /></div><div className="sig-persona-name">Price switcher</div></div>
           </div>
           <div className="sig-personas-label">3 distinct groups &middot; 847 responses</div>
         </div>

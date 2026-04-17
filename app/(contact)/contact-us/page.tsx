@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Talk to our team",
   description:
     "Get in touch with the Convo team about Humanize. We'll be back within one business day.",
+  alternates: { canonical: "/contact-us" },
 };
 
 const LOGOS: Array<{ src: string; alt: string }> = [

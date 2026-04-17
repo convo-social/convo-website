@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Study Privacy Policy",
   description:
     "How Convo handles Personal Data from individuals who participate in AI-moderated research Studies.",
+  alternates: { canonical: "/study-privacy" },
 };
 
 export default function StudyPrivacyPage() {

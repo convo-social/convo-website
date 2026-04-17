@@ -5,13 +5,6 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import styles from "./Header.module.css";
 
-const LINKS = [
-  { href: "#", label: "Platform" },
-  { href: "#", label: "How it works" },
-  { href: "#", label: "Clients" },
-  { href: "#", label: "Pricing" },
-];
-
 type HeaderProps = {
   /** CTA label used on the primary "Book a demo" / "Get started" button. */
   ctaLabel?: string;
@@ -26,14 +19,6 @@ export function Header({ ctaLabel = "Book a demo" }: HeaderProps) {
         <Link href="/" className={styles.wordmark}>
           Humanize
         </Link>
-
-        <div className={styles.links}>
-          {LINKS.map((l) => (
-            <a key={l.label} href={l.href}>
-              {l.label}
-            </a>
-          ))}
-        </div>
 
         <div className={styles.actions}>
           <a
@@ -61,11 +46,6 @@ export function Header({ ctaLabel = "Book a demo" }: HeaderProps) {
       </Container>
 
       <div className={`${styles.mobile} ${open ? styles.open : ""}`}>
-        {LINKS.map((l) => (
-          <a key={l.label} href={l.href} onClick={() => setOpen(false)}>
-            {l.label}
-          </a>
-        ))}
         <div className={styles.mobileButtons}>
           <a
             href="https://convo.build"

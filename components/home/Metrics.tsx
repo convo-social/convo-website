@@ -3,7 +3,7 @@ export function Metrics() {
     <section className="sec-metrics">
       <div className="container">
         <div className="metrics-header">
-          <h2>Built for the cadence consumer brands now operate at.</h2>
+          <h2>Designed for the speed categories now move at.</h2>
           <p>Categories shift in weeks. Research designed for quarters cannot keep up. We engineered a system that can.</p>
         </div>
         <div className="metrics-grid">

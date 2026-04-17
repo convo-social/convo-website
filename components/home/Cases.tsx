@@ -66,7 +66,7 @@ export function Cases() {
                 <div className="cc-mockup"><div className="cc-mockup-q">Why did the ad underperform?</div><div className="cc-mockup-quote">"It felt generic. Like every other brand in the aisle."</div></div>
               </div>
             </div>
-            <div className="cc-footer"><div className="cc-cat">Creative diagnostics</div><div className="cc-desc">Your campaign underperformed. Hear what the audience actually felt in the moment.</div></div>
+            <div className="cc-footer"><div className="cc-cat">Creative diagnostics</div><div className="cc-desc">Why did the campaign underperform? Hear what the audience actually felt in the moment.</div></div>
           </div>
           {/* 6. Subscription & retention */}
           <div className="cc">
@@ -110,7 +110,7 @@ export function Cases() {
                 <div className="cc-mockup"><div className="cc-mockup-q">Why do patients stop adhering?</div><div className="cc-mockup-quote">"I forget after the first week. Nothing brings me back."</div></div>
               </div>
             </div>
-            <div className="cc-footer"><div className="cc-cat">Clinical &amp; regulated audiences</div><div className="cc-desc">Patient adherence, physician preference, caregiver experience. Vetted panels.</div></div>
+            <div className="cc-footer"><div className="cc-cat">Clinical &amp; regulated audiences</div><div className="cc-desc">Patient adherence, physician preference, caregiver experience? Reach them through vetted panels.</div></div>
           </div>
         </div>
       </div>

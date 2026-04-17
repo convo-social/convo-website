@@ -29,7 +29,7 @@ export function FinalCTA() {
       </div>
       <div className="cta-text">
         <div className="cta-text-headline">Don't guess. Ask your customers.</div>
-        <div className="cta-text-body">Humanize is deployed by enterprise insights, brand, and innovation teams who need real consumer evidence on the cadence of real decisions. Talk to our team to get set up right away.</div>
+        <div className="cta-text-body">Humanize is deployed by enterprise insights, brand, and innovation teams who need real consumer evidence at the speed real decisions happen. Book time with our team.</div>
         <div className="cta-text-row">
           <a href="/contact-us" className="btn btn-primary">Book a demo <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></a>
         </div>

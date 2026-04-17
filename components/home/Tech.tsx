@@ -4,7 +4,7 @@ export function Tech() {
       <div className="container">
         <div className="tech-header">
             <h2>The technology behind modern qualitative research.</h2>
-            <p className="subhead">Recruitment, moderation, and synthesis rebuilt from the ground up for modern product and brand teams.</p>
+            <p className="subhead">Recruitment, moderation, and synthesis, rebuilt from the ground up for product and brand teams.</p>
         </div>
         <div className="tech-tab-bar">
           <button className="tech-tab active" data-tech="0">Audience Precision</button>

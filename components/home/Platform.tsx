@@ -3,7 +3,7 @@ export function Platform() {
     <section className="platform">
       <div className="pl-header">
         <h2>A new category of consumer research, built for enterprise.</h2>
-        <p className="subhead">For decades, qualitative research forced a choice between depth, scale, and speed. We designed the first system without those constraints.</p>
+        <p className="subhead">For decades, qualitative research forced a choice between depth, scale, and speed. We built the system that doesn't.</p>
       </div>
 
       <div className="pl-row">

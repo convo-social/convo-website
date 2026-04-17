@@ -9,7 +9,7 @@ export function Hero() {
         <div className="h-hero-text">
           <div className="h-eyebrow">Consumer intelligence at enterprise scale</div>
           <h1 className="h-headline">Ask your customers<br />before you make the call.</h1>
-          <p className="h-sub">The research layer for brands that can't afford to be wrong. Hundreds of moderated consumer conversations, run in parallel, returned as a decision with the evidence behind it. In days, not weeks.</p>
+          <p className="h-sub">The research layer for brands that can't afford to be wrong. Hundreds of customer conversations, run in parallel. Decisions in days, not weeks.</p>
           <div className="h-cta-row">
             <a href="/contact-us" className="btn btn-primary">
               Book a demo

@@ -4,31 +4,8 @@ import styles from "./Footer.module.css";
 
 const COLUMNS = [
   {
-    title: "Platform",
-    links: [
-      { href: "#", label: "How it works" },
-      { href: "#", label: "Signal Report" },
-      { href: "#", label: "Recruitment" },
-      { href: "#", label: "Pricing" },
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      { href: "#", label: "CPG & Retail" },
-      { href: "#", label: "Healthcare" },
-      { href: "#", label: "Enterprise" },
-      { href: "#", label: "Use cases" },
-    ],
-  },
-  {
     title: "Company",
-    links: [
-      { href: "#", label: "About" },
-      { href: "#", label: "Clients" },
-      { href: "#", label: "Research" },
-      { href: "/contact-us", label: "Contact" },
-    ],
+    links: [{ href: "/contact-us", label: "Contact" }],
   },
 ];
 

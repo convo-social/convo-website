@@ -1,0 +1,430 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────────────────
+   Convo — Design tokens (single source of truth)
+   Every value here maps 1:1 to the legacy _legacy/css/tokens.css
+   and the inline :root blocks in the legacy HTML pages.
+   ─────────────────────────────────────────────────────────── */
+:root {
+  /* ─── Palette ─── */
+  --color-page: #FFFEFE;
+  --color-beige: #F6F2ED;
+  --color-dark: #0F0F0E;
+  --color-dark-surf: #1A1A18;
+  --color-accent: #2C5F8A;
+  --color-muted: #7A7A75;
+  --color-mid: #3D3D3A;
+  --color-border: rgba(0, 0, 0, 0.09);
+  --color-border-dk: rgba(255, 255, 255, 0.08);
+  --color-divider: #E8E4DF;
+
+  --accent-slate: #2C5F8A;
+  --accent-sage: #3D6B5E;
+  --accent-violet: #5C4A8A;
+  --accent-brown: #8A5C3A;
+  --accent-teal: #2A6B6B;
+  --coral: #C47A4A;
+
+  /* Hero "humanize" palette */
+  --h-bg: #FDFDFC;
+  --h-bg-tint: #F5F4F0;
+  --h-ink: #0E0E0C;
+  --h-ink-2: #1A1A18;
+  --h-gray-1: #6B6B66;
+  --h-gray-2: #9A9A94;
+  --h-gray-3: #C8C8C2;
+  --h-gray-4: #E5E4DE;
+  --h-gray-5: #EFEEE8;
+  --h-line: #E8E7E1;
+  --h-white: #FFFFFF;
+  --h-green: #16A34A;
+
+  /* How-it-works block */
+  --hw-card-bg: #F1EFE8;
+  --hw-beige: #E8E2D4;
+  --hw-beige-dark: #DDD5C3;
+
+  /* Playbook block */
+  --pl-ink: #1A1A18;
+  --pl-ink-2: #4A4A47;
+  --pl-ink-3: #8A8A85;
+  --pl-green: #4A7C59;
+  --pl-beige: #C9BFA8;
+  --pl-line: rgba(26, 26, 24, 0.08);
+
+  --eyebrow-color: #6B6B6B;
+
+  /* Fonts: --font-plex-sans / --font-plex-mono / --font-plex-serif
+     are set by next/font via the html className in app/layout.tsx. */
+
+  /* ─── Radii ─── */
+  --radius-card: 6px;
+  --radius-tag: 4px;
+  --radius-pill: 999px;
+  --radius-input: 4px;
+
+  /* ─── Section spacing ─── */
+  --section-pad-y: 120px;
+  --eyebrow-to-h2: 16px;
+  --h2-to-sub: 12px;
+  --sub-to-content: 64px;
+  --ds-card-gap: 24px;
+  --ds-card-pad: 32px;
+  --ds-card-radius: 12px;
+
+  /* ─── Typography scale (desktop) ─── */
+  --text-display: 52px;
+  --text-display-lh: 1.05;
+  --text-display-tracking: -0.02em;
+
+  --text-hero: 48px;
+  --text-hero-lh: 1.08;
+  --text-hero-tracking: -0.02em;
+
+  --text-metric: 44px;
+  --text-metric-lh: 1.05;
+  --text-metric-tracking: -0.02em;
+
+  --text-section: 34px;
+  --text-section-lh: 1.12;
+  --text-section-tracking: -0.02em;
+
+  --text-title: 28px;
+  --text-title-lh: 1.15;
+  --text-title-tracking: -0.015em;
+
+  --text-sub: 24px;
+  --text-sub-lh: 1.25;
+  --text-sub-tracking: -0.01em;
+
+  --text-feature: 22px;
+  --text-feature-lh: 1.25;
+  --text-feature-tracking: -0.01em;
+
+  --text-card: 20px;
+  --text-card-lh: 1.3;
+  --text-card-tracking: -0.01em;
+
+  --text-lead: 18px;
+  --text-lead-lh: 1.4;
+
+  --text-body: 16px;
+  --text-body-lh: 1.55;
+
+  --text-small: 14px;
+  --text-small-lh: 1.5;
+
+  --text-caption: 13px;
+  --text-caption-lh: 1.45;
+
+  --text-meta: 12px;
+  --text-meta-lh: 1.4;
+  --text-meta-tracking: 0.08em;
+
+  --text-mini: 11px;
+  --text-mini-lh: 1.4;
+
+  --text-micro: 10px;
+  --text-micro-lh: 1.3;
+
+  --text-nano: 9px;
+  --text-nano-lh: 1.3;
+
+  --text-pico: 8px;
+  --text-pico-lh: 1.3;
+
+  --text-button: var(--text-small);
+  --text-button-sm: var(--text-meta);
+  --text-nav: var(--text-small);
+}
+
+/* ─── Mobile type scale + section padding overrides ─── */
+@media (max-width: 720px) {
+  :root {
+    --text-display: 40px;
+    --text-hero: 36px;
+    --text-metric: 34px;
+    --text-section: 28px;
+    --text-title: 24px;
+    --text-sub: 22px;
+    --text-feature: 20px;
+
+    --section-pad-y: 72px;
+    --sub-to-content: 40px;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────
+   Tailwind v4 theme — expose tokens as utilities.
+   Usage examples:
+     bg-beige, text-muted, border-divider, rounded-card,
+     text-hero, text-display, font-mono, font-serif
+   ─────────────────────────────────────────────────────────── */
+@theme inline {
+  /* Colors — utilities like bg-page, text-accent, border-divider */
+  --color-page: var(--color-page);
+  --color-beige: var(--color-beige);
+  --color-dark: var(--color-dark);
+  --color-dark-surf: var(--color-dark-surf);
+  --color-accent: var(--color-accent);
+  --color-muted: var(--color-muted);
+  --color-mid: var(--color-mid);
+  --color-divider: var(--color-divider);
+  --color-coral: var(--coral);
+
+  --color-accent-slate: var(--accent-slate);
+  --color-accent-sage: var(--accent-sage);
+  --color-accent-violet: var(--accent-violet);
+  --color-accent-brown: var(--accent-brown);
+  --color-accent-teal: var(--accent-teal);
+
+  --color-h-bg: var(--h-bg);
+  --color-h-bg-tint: var(--h-bg-tint);
+  --color-h-ink: var(--h-ink);
+  --color-h-ink-2: var(--h-ink-2);
+  --color-h-gray-1: var(--h-gray-1);
+  --color-h-gray-2: var(--h-gray-2);
+  --color-h-gray-3: var(--h-gray-3);
+  --color-h-gray-4: var(--h-gray-4);
+  --color-h-gray-5: var(--h-gray-5);
+  --color-h-line: var(--h-line);
+  --color-h-white: var(--h-white);
+  --color-h-green: var(--h-green);
+
+  /* Fonts — font-sans, font-mono, font-serif */
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+  --font-serif: var(--font-plex-serif);
+
+  /* Radii — rounded-card, rounded-tag, rounded-pill, rounded-input */
+  --radius-card: var(--radius-card);
+  --radius-tag: var(--radius-tag);
+  --radius-pill: var(--radius-pill);
+  --radius-input: var(--radius-input);
+
+  /* Container max-width used site-wide */
+  --container-site: 1320px;
+
+  /* Typography — text-display..text-pico (font-size + line-height + tracking) */
+  --text-display: var(--text-display);
+  --text-display--line-height: var(--text-display-lh);
+  --text-display--letter-spacing: var(--text-display-tracking);
+
+  --text-hero: var(--text-hero);
+  --text-hero--line-height: var(--text-hero-lh);
+  --text-hero--letter-spacing: var(--text-hero-tracking);
+
+  --text-metric: var(--text-metric);
+  --text-metric--line-height: var(--text-metric-lh);
+  --text-metric--letter-spacing: var(--text-metric-tracking);
+
+  --text-section: var(--text-section);
+  --text-section--line-height: var(--text-section-lh);
+  --text-section--letter-spacing: var(--text-section-tracking);
+
+  --text-title: var(--text-title);
+  --text-title--line-height: var(--text-title-lh);
+  --text-title--letter-spacing: var(--text-title-tracking);
+
+  --text-sub: var(--text-sub);
+  --text-sub--line-height: var(--text-sub-lh);
+  --text-sub--letter-spacing: var(--text-sub-tracking);
+
+  --text-feature: var(--text-feature);
+  --text-feature--line-height: var(--text-feature-lh);
+  --text-feature--letter-spacing: var(--text-feature-tracking);
+
+  --text-card: var(--text-card);
+  --text-card--line-height: var(--text-card-lh);
+  --text-card--letter-spacing: var(--text-card-tracking);
+
+  --text-lead: var(--text-lead);
+  --text-lead--line-height: var(--text-lead-lh);
+
+  --text-body: var(--text-body);
+  --text-body--line-height: var(--text-body-lh);
+
+  --text-small: var(--text-small);
+  --text-small--line-height: var(--text-small-lh);
+
+  --text-caption: var(--text-caption);
+  --text-caption--line-height: var(--text-caption-lh);
+
+  --text-meta: var(--text-meta);
+  --text-meta--line-height: var(--text-meta-lh);
+  --text-meta--letter-spacing: var(--text-meta-tracking);
+
+  --text-mini: var(--text-mini);
+  --text-mini--line-height: var(--text-mini-lh);
+
+  --text-micro: var(--text-micro);
+  --text-micro--line-height: var(--text-micro-lh);
+
+  --text-nano: var(--text-nano);
+  --text-nano--line-height: var(--text-nano-lh);
+
+  --text-pico: var(--text-pico);
+  --text-pico--line-height: var(--text-pico-lh);
+}
+
+/* ─── Reset + base styles (ported from legacy) ─── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-plex-sans);
+  background: var(--h-bg);
+  color: var(--color-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ─── Shared layout primitives (ported from legacy) ─── */
+section {
+  padding: var(--section-pad-y) 0;
+}
+
+.container {
+  max-width: var(--container-max, 1320px);
+  margin: 0 auto;
+  padding: 0 var(--container-pad, 24px);
+}
+
+/* ─── Typography helpers ─── */
+.eyebrow,
+.h-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--text-meta);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--text-meta-tracking);
+  color: var(--eyebrow-color);
+  margin-bottom: var(--eyebrow-to-h2);
+}
+
+h1 {
+  font-size: var(--text-hero);
+  line-height: var(--text-hero-lh);
+  letter-spacing: var(--text-hero-tracking);
+  font-weight: 500;
+  color: var(--h-ink);
+}
+
+h2 {
+  font-size: var(--text-section);
+  line-height: var(--text-section-lh);
+  letter-spacing: var(--text-section-tracking);
+  font-weight: 500;
+  color: var(--h-ink);
+}
+
+h3 {
+  font-weight: 500;
+}
+
+.subhead {
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: var(--text-body-lh);
+  color: var(--h-gray-1);
+  max-width: 100%;
+  margin-top: var(--h2-to-sub);
+}
+
+/* ─── Buttons (ported from legacy) ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-plex-sans);
+  font-size: var(--text-button);
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--h-ink);
+  color: var(--h-white);
+  border-color: var(--h-ink);
+}
+
+.btn-primary:hover {
+  background: #1a1a18;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--h-ink);
+  border-color: var(--h-line);
+}
+
+.btn-ghost:hover {
+  background: var(--h-white);
+  border-color: var(--h-ink);
+}
+
+.btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover svg {
+  transform: translateX(2px);
+}
+
+.btn-sm {
+  font-size: var(--text-button-sm);
+  padding: 0.5rem 1rem;
+}
+
+/* Section divider (ported) */
+.section-divider {
+  max-width: var(--container-max, 1320px);
+  margin: 0 auto;
+  padding: 0 var(--container-pad, 24px);
+}
+.section-divider::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--h-line);
+}
+
+@media (max-width: 720px) {
+  .container,
+  .section-divider {
+    padding: 0 24px;
+  }
+}

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Humanize</title>
+  <meta name="description" content="Humanize Privacy Policy — how we collect, use, and protect your personal data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ─── DESIGN TOKENS ─── */
+    :root {
+      --color-page: #FFFEFE;
+      --color-beige: #F6F2ED;
+      --color-dark: #0F0F0E;
+      --color-dark-surf: #1A1A18;
+      --color-muted: #7A7A75;
+      --color-divider: #E8E4DF;
+      --h-bg: #FDFDFC;
+      --h-ink: #0E0E0C;
+      --h-ink-2: #1A1A18;
+      --h-gray-1: #6B6B66;
+      --h-gray-4: #E5E4DE;
+      --h-gray-5: #EFEEE8;
+      --h-line: #E8E7E1;
+      --h-white: #FFFFFF;
+      --h-font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+      --h-font-mono: 'IBM Plex Mono', monospace;
+      --hw-beige: #E8E2D4;
+
+      --text-hero: 44px;
+      --text-hero-lh: 1.05;
+      --text-hero-tracking: -0.02em;
+      --text-section: 28px;
+      --text-section-lh: 1.2;
+      --text-body: 16px;
+      --text-body-lh: 1.65;
+      --text-meta: 13px;
+      --text-meta-tracking: 0.08em;
+      --section-pad-y: 120px;
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--h-font-sans);
+      background: var(--h-bg);
+      color: var(--color-dark);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    section { padding: var(--section-pad-y) 0; }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--h-font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.75rem 1.25rem;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--h-ink);
+      color: var(--h-white);
+      border-color: var(--h-ink);
+    }
+    .btn-primary:hover { background: #1a1a18; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--h-ink);
+      border-color: var(--h-line);
+    }
+    .btn-ghost:hover { background: var(--h-white); border-color: var(--h-ink); }
+    .btn-sm { font-size: 0.75rem; padding: 0.5rem 1rem; }
+
+    /* ─── NAV ─── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--h-bg);
+    }
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-wordmark {
+      font-family: var(--h-font-sans);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--color-dark);
+    }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--h-ink);
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .nav-links a:hover { border-color: var(--hw-beige); }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .nav-actions .btn-sm { font-size: 0.75rem; padding: 0.3rem 1rem; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 20px;
+      height: 14px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .nav-toggle span,
+    .nav-toggle::before,
+    .nav-toggle::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: var(--color-dark);
+      transition: transform 0.2s;
+    }
+    .nav-toggle::before { top: 0; }
+    .nav-toggle span { top: 6px; }
+    .nav-toggle::after { top: 12px; }
+    .nav-mobile { display: none; }
+    .nav-mobile.is-open {
+      display: block;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--h-bg);
+      border-bottom: 1px solid var(--color-divider);
+      padding: 24px;
+      z-index: 99;
+    }
+    .nav-mobile a {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-muted);
+      padding: 10px 0;
+    }
+    .nav-mobile a:hover { color: var(--color-dark); }
+    .nav-mobile-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .nav-mobile-buttons .btn { width: 100%; justify-content: center; }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: var(--color-dark-surf);
+      padding: 4rem 0 3rem;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 48px;
+    }
+    .footer-brand-wordmark {
+      font-family: var(--h-font-sans);
+      font-size: 17px;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+    .footer-brand-tagline {
+      font-family: var(--h-font-sans);
+      font-size: 13.5px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      max-width: 240px;
+      line-height: 1.55;
+      margin-top: 10px;
+    }
+    .footer-columns { display: flex; gap: 56px; }
+    .footer-col-title {
+      font-family: var(--h-font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 18px;
+    }
+    .footer-col a {
+      display: block;
+      font-family: var(--h-font-sans);
+      font-size: 13.5px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      line-height: 2.4;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: #FFFFFF; }
+    .footer-bottom {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom span,
+    .footer-bottom a {
+      font-family: var(--h-font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+    }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+    .footer-legal { display: flex; gap: 20px; }
+
+    /* ─── LEGAL CONTENT ─── */
+    .legal-section { padding: 80px 0 120px; }
+    .legal-content { max-width: 760px; margin: 0 auto; }
+    .legal-content h1 {
+      font-family: var(--h-font-sans);
+      font-size: var(--text-hero);
+      line-height: var(--text-hero-lh);
+      letter-spacing: var(--text-hero-tracking);
+      font-weight: 500;
+      color: var(--h-ink);
+      margin-bottom: 16px;
+    }
+    .legal-content h2 {
+      font-family: var(--h-font-sans);
+      font-size: var(--text-section);
+      line-height: var(--text-section-lh);
+      font-weight: 500;
+      color: var(--h-ink);
+      margin-top: 56px;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .legal-content h3 {
+      font-family: var(--h-font-sans);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--h-ink);
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+    .legal-content p {
+      font-size: var(--text-body);
+      line-height: var(--text-body-lh);
+      color: var(--h-gray-1);
+      margin-bottom: 16px;
+    }
+    .legal-content strong { color: var(--h-ink); font-weight: 500; }
+    .legal-content a {
+      color: var(--h-ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--h-gray-4);
+      transition: text-decoration-color 0.15s;
+    }
+    .legal-content a:hover { text-decoration-color: var(--h-ink); }
+    .legal-content ul {
+      list-style: disc;
+      margin: 0 0 20px 24px;
+      color: var(--h-gray-1);
+    }
+    .legal-content ul li {
+      font-size: var(--text-body);
+      line-height: var(--text-body-lh);
+      margin-bottom: 8px;
+    }
+    .legal-content hr {
+      border: none;
+      border-top: 1px solid var(--h-line);
+      margin: 40px 0;
+    }
+    .legal-updated {
+      font-family: var(--h-font-mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--h-gray-1);
+      margin-bottom: 32px !important;
+    }
+    .legal-updated strong { color: var(--h-gray-1); font-weight: 500; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 720px) {
+      :root {
+        --text-hero: 34px;
+        --text-section: 24px;
+        --section-pad-y: 72px;
+      }
+      .container { padding: 0 24px; }
+      .legal-section { padding: 48px 0 80px; }
+      .legal-content h2 { margin-top: 40px; }
+      .nav-links { display: none; }
+      .nav-actions .btn-ghost { display: none; }
+      .nav-toggle { display: block; }
+      .footer-top { flex-direction: column; gap: 40px; }
+      .footer-columns { flex-wrap: wrap; gap: 40px 56px; }
+      .footer-bottom { flex-direction: column; gap: 20px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="nav-wordmark">Humanize</a>
+    <div class="nav-links">
+      <a href="#">Platform</a>
+      <a href="#">How it works</a>
+      <a href="#">Clients</a>
+      <a href="#">Pricing</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="btn btn-ghost btn-sm">Sign in</a>
+      <a href="contact-us.html" class="btn btn-primary btn-sm">Get started</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu" id="navToggle">
+      <span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#">Platform</a>
+    <a href="#">How it works</a>
+    <a href="#">Clients</a>
+    <a href="#">Pricing</a>
+    <div class="nav-mobile-buttons">
+      <a href="#" class="btn btn-ghost">Sign in</a>
+      <a href="contact-us.html" class="btn btn-primary">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="legal-section">
+    <div class="container">
+      <div class="legal-content">
+        <h1>Privacy Policy</h1>
+        <p class="legal-updated"><strong>Last Updated: April 1, 2026</strong></p>
+        <p>Thank you for visiting Convo! We value your privacy and want you to understand how we collect, use, and protect your personal data when you interact with our website, sign up for our services as a customer, request demos, receive marketing communications, or otherwise engage with us in a non-participant capacity.</p>
+        <p><strong>Note:</strong> If you are participating in a Convo research study or focus group, please see our separate <a href="study-privacy.html">Convo Study Privacy Policy</a> for details on how we handle participant data.</p>
+        <hr>
+
+        <h2>1. Introduction &amp; Contact Information</h2>
+        <p>Convo provides an AI-powered qualitative research platform. This Privacy Policy (&ldquo;Policy&rdquo;) describes how we collect and process personal data from:</p>
+        <ul>
+          <li>Website visitors</li>
+          <li>Prospective or existing customers (Researchers)</li>
+          <li>Anyone engaging with our website or services in a non-participant capacity</li>
+        </ul>
+        <p>If you have questions or concerns about this Policy or your personal data, please contact our Data Protection Officer:</p>
+        <p><strong>Data Protection Officer:</strong><br>
+        Orr Matarasso<br>
+        300 West 57th Street, 41st Floor<br>
+        New York, NY 10019<br>
+        United States<br>
+        orr@useconvo.ai</p>
+
+        <h2>2. Information We Collect</h2>
+        <p>When you use our website or otherwise interact with us (outside of research studies), we may collect:</p>
+        <h3>2.1 Contact Details</h3>
+        <p>Name, job title, company name, and work email address &mdash; for example, when you request a demo, create an account, sign up for updates, or contact us.</p>
+        <h3>2.2 Account Information</h3>
+        <p>Login credentials, account preferences, billing information, and payment details when you subscribe to or purchase the Services.</p>
+        <h3>2.3 Technical &amp; Usage Data</h3>
+        <p>IP address, browser type, operating system, device details, pages viewed, links clicked, and referring URLs. We collect this data through cookies, web beacons, and similar tracking technologies.</p>
+        <h3>2.4 Marketing &amp; Communication Preferences</h3>
+        <p>Data you provide when subscribing to newsletters, registering for events, or requesting marketing materials.</p>
+        <h3>2.5 Information from Third Parties</h3>
+        <p>We may receive personal data from third parties or publicly available sources (e.g., LinkedIn, industry events, partner referrals) to support our sales and marketing activities.</p>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use your information for the following purposes:</p>
+        <ul>
+          <li><strong>Provide and Operate the Services:</strong> Maintain your account, process payments, deliver research results, and ensure the platform functions properly.</li>
+          <li><strong>Respond to Inquiries &amp; Provide Support:</strong> Fulfill demo requests, answer questions, troubleshoot issues, and offer customer assistance.</li>
+          <li><strong>Marketing &amp; Communications:</strong> Send you updates about our services, newsletters, or promotional materials, where permitted by law or with your consent. You can opt out at any time.</li>
+          <li><strong>Analytics &amp; Improvements:</strong> Understand how users interact with our website and Services, measure campaign performance, and improve the user experience.</li>
+          <li><strong>Security &amp; Fraud Prevention:</strong> Detect, investigate, and prevent fraudulent, unauthorized, or illegal activity.</li>
+          <li><strong>Legal Compliance:</strong> Comply with applicable laws, regulations, and legal processes.</li>
+        </ul>
+
+        <h2>4. Cookies and Similar Technologies</h2>
+        <p>We and certain third parties use cookies, pixels, and similar technologies to:</p>
+        <ul>
+          <li>Remember your settings and preferences</li>
+          <li>Analyze website traffic and performance</li>
+          <li>Measure the effectiveness of our marketing efforts</li>
+          <li>Provide more relevant content</li>
+        </ul>
+        <p>You can control cookies through your browser settings. Disabling cookies may affect some features or functionality of our website.</p>
+
+        <h2>5. Sharing Information with Third Parties</h2>
+        <p>We do not sell your personal data. We share it only in limited circumstances:</p>
+        <ul>
+          <li><strong>Service Providers:</strong> Companies that help us operate the Services, including hosting, analytics, email delivery, payment processing, and customer support. These providers are authorized to use personal data only as necessary to provide services on our behalf.</li>
+          <li><strong>Legal Compliance &amp; Safety:</strong> When required to comply with applicable law, protect our rights or the rights of others, investigate fraud, or respond to a government request.</li>
+          <li><strong>Aggregated/De-identified Data:</strong> We may share aggregated or de-identified data with partners for analytics or research purposes. This data cannot be used to identify you.</li>
+          <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, financing, or sale of all or a portion of our assets. We will notify you if a transaction occurs that affects your personal data.</li>
+        </ul>
+
+        <h2>6. Data Storage, Transfers, and Retention</h2>
+        <h3>Location of Servers</h3>
+        <p>We primarily store data on servers located in the United States.</p>
+        <h3>International Transfers</h3>
+        <p>If you access our website from the EEA, UK, or other regions with data transfer restrictions, we rely on lawful transfer mechanisms (e.g., standard contractual clauses) to ensure adequate data protection.</p>
+        <h3>Retention Period</h3>
+        <p>We keep personal data only as long as needed for the purposes described in this Policy or as required by law. You may request deletion of your data by contacting orr@useconvo.ai.</p>
+
+        <h2>7. Your Rights and Choices</h2>
+        <p>Depending on your jurisdiction (e.g., GDPR, CCPA/CPRA), you may have certain rights regarding your personal data, including:</p>
+        <ul>
+          <li><strong>Access &amp; Portability:</strong> Request a copy of the personal data we hold about you in a structured, commonly used format.</li>
+          <li><strong>Rectification:</strong> Correct any inaccurate or incomplete information.</li>
+          <li><strong>Deletion:</strong> Ask us to delete your personal data where legally permitted.</li>
+          <li><strong>Object/Restrict:</strong> Object to or request restriction of certain processing activities.</li>
+          <li><strong>Withdraw Consent:</strong> Where processing is based on consent, you can withdraw it at any time.</li>
+          <li><strong>Non-Discrimination:</strong> We will not discriminate against you for exercising your privacy rights.</li>
+        </ul>
+        <p>To exercise your rights, please email orr@useconvo.ai. We will respond within the timeframe required by applicable law.</p>
+
+        <h2>8. Security Measures</h2>
+        <p>We employ industry-standard security measures to protect personal data, including encryption, access controls, and continuous monitoring. However, no method of storage or transmission is completely secure. We continuously work to maintain and improve our security protocols.</p>
+
+        <h2>9. Children&rsquo;s Data</h2>
+        <p>Our website and Services are not intended for individuals under the age of 16 (or a higher age if mandated by applicable law). We do not knowingly collect personal data from children. If you believe we have unintentionally collected data from someone under the applicable age, please contact us to request deletion.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal obligations. If we make material changes, we will notify you by posting an update on our website or by email. Your continued use of our website after any such update constitutes acknowledgment of the modified Policy.</p>
+
+        <h2>11. Questions, Concerns, or Complaints</h2>
+        <p>If you have questions about this Policy or how we handle your personal data, please contact us at:</p>
+        <p><strong>Convo</strong><br>
+        Attn: Orr Matarasso, Data Protection Officer<br>
+        300 West 57th Street, 41st Floor<br>
+        New York, NY 10019<br>
+        United States<br>
+        orr@useconvo.ai</p>
+        <p>If you are in the EU or UK, you may also have the right to lodge a complaint with your local data protection authority.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-wordmark">Humanize</div>
+        <div class="footer-brand-tagline">Ask your customers before you make the call.</div>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <div class="footer-col-title">Platform</div>
+          <a href="#">How it works</a>
+          <a href="#">Signal Report</a>
+          <a href="#">Recruitment</a>
+          <a href="#">Pricing</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Solutions</div>
+          <a href="#">CPG &amp; Retail</a>
+          <a href="#">Healthcare</a>
+          <a href="#">Enterprise</a>
+          <a href="#">Use cases</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a href="#">About</a>
+          <a href="#">Clients</a>
+          <a href="#">Research</a>
+          <a href="contact-us.html">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Humanize</span>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function() {
+    document.getElementById('navMobile').classList.toggle('is-open');
+  });
+</script>
+
+</body>
+</html>

@@ -15,7 +15,11 @@ const eslintConfig = defineConfig([
   {
     // Intentional raw <img> usage: logo marquees (tiny PNGs where next/image
     // overhead exceeds the payload win) and unsplash placeholder tiles.
-    files: ["app/(site)/page.tsx", "app/(contact)/contact-us/page.tsx"],
+    files: [
+      "components/home/Cases.tsx",
+      "components/home/Logos.tsx",
+      "app/(contact)/contact-us/page.tsx",
+    ],
     rules: { "@next/next/no-img-element": "off" },
   },
   {

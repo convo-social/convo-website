@@ -1,0 +1,152 @@
+.card {
+  background: var(--color-beige);
+  border-radius: var(--radius-card);
+  padding: 48px 72px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.card h2 {
+  font-size: var(--text-sub);
+  font-weight: 600;
+  color: var(--h-ink);
+  line-height: 1.25;
+}
+
+.subtitle {
+  font-size: var(--text-body);
+  color: var(--h-gray-1);
+  margin-top: -12px;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.group label {
+  font-size: var(--text-meta);
+  font-weight: 600;
+  color: var(--h-ink);
+}
+
+.group input,
+.group textarea {
+  font-family: var(--font-plex-sans);
+  font-size: var(--text-body);
+  padding: 11px 14px;
+  border: 1px solid var(--color-divider);
+  border-radius: 8px;
+  background: var(--h-white);
+  color: var(--h-ink);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.group input::placeholder,
+.group textarea::placeholder {
+  color: var(--h-gray-3);
+}
+
+.group input:focus,
+.group textarea:focus {
+  border-color: var(--h-ink);
+}
+
+.group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--h-ink);
+  color: var(--h-white);
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-plex-sans);
+  font-size: var(--text-button);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.submit:hover {
+  background: #1a1a18;
+  transform: translateY(-1px);
+}
+
+.submit svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s;
+}
+
+.submit:hover svg {
+  transform: translateX(2px);
+}
+
+.success {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.success h3 {
+  font-size: var(--text-card);
+  font-weight: 600;
+  color: var(--h-ink);
+  margin-bottom: 10px;
+}
+
+.success p {
+  font-size: var(--text-body);
+  color: var(--h-gray-1);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.success a {
+  color: var(--h-ink);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.popupBlocked {
+  margin-top: 12px;
+  font-size: var(--text-small);
+  color: var(--h-gray-1);
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 28px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,13 @@
+/* Legal pages used a narrower container (1140px / 48px) in the legacy
+   HTML. Scope these overrides to the legal route group so the main site
+   keeps its 1320px / 24px container. */
+.root {
+  --container-max: 1140px;
+  --container-pad: 48px;
+}
+
+@media (max-width: 720px) {
+  .root {
+    --container-pad: 24px;
+  }
+}

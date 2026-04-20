@@ -1,0 +1,149 @@
+/* Ported 1:1 from the .legal-section / .legal-content blocks in the
+   legacy legal HTML pages. The typography overrides (--text-hero: 44px,
+   --text-section: 28px, --text-body-lh: 1.65) are scoped here so they
+   only apply on legal pages. */
+
+.section {
+  padding: 80px 0 120px;
+  /* Legal-page-specific type scale overrides */
+  --text-hero: 44px;
+  --text-hero-lh: 1.05;
+  --text-hero-tracking: -0.02em;
+  --text-section: 28px;
+  --text-section-lh: 1.2;
+  --text-body: 16px;
+  --text-body-lh: 1.65;
+  --text-meta: 13px;
+  --text-meta-tracking: 0.08em;
+}
+
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  color: var(--h-gray-1);
+}
+
+.content h1 {
+  font-family: var(--font-plex-sans);
+  font-size: var(--text-hero);
+  line-height: var(--text-hero-lh);
+  letter-spacing: var(--text-hero-tracking);
+  font-weight: 500;
+  color: var(--h-ink);
+  margin-bottom: 16px;
+}
+
+.content h2 {
+  font-family: var(--font-plex-sans);
+  font-size: var(--text-section);
+  line-height: var(--text-section-lh);
+  font-weight: 500;
+  color: var(--h-ink);
+  margin-top: 56px;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.content h3 {
+  font-family: var(--font-plex-sans);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--h-ink);
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  color: var(--h-gray-1);
+  margin-bottom: 16px;
+}
+
+.content strong {
+  color: var(--h-ink);
+  font-weight: 500;
+}
+
+.content a {
+  color: var(--h-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--h-gray-4);
+  transition: text-decoration-color 0.15s;
+}
+
+.content a:hover {
+  text-decoration-color: var(--h-ink);
+}
+
+.content ul {
+  list-style: disc;
+  margin: 0 0 20px 24px;
+  color: var(--h-gray-1);
+}
+
+.content ul li {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  margin-bottom: 8px;
+}
+
+.content hr {
+  border: none;
+  border-top: 1px solid var(--h-line);
+  margin: 40px 0;
+}
+
+.updated {
+  font-family: var(--font-plex-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--h-gray-1);
+  margin-bottom: 32px !important;
+}
+
+.updated strong {
+  color: var(--h-gray-1);
+  font-weight: 500;
+}
+
+.summaryBox {
+  background: var(--h-gray-5);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin: 24px 0 40px;
+}
+
+.summaryBox h2 {
+  margin-top: 0 !important;
+  font-size: 20px !important;
+  margin-bottom: 12px !important;
+}
+
+.summaryBox ul {
+  margin-bottom: 0;
+}
+
+.summaryBox ul li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 48px 0 80px;
+    --text-hero: 34px;
+    --text-section: 24px;
+  }
+
+  .content h2 {
+    margin-top: 40px;
+  }
+
+  .summaryBox {
+    padding: 20px 22px;
+  }
+}

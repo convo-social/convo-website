@@ -1,4 +1,4 @@
-# Convo Website
+# Humanize Website
 
 Next.js 16 (App Router) + TypeScript + Tailwind v4. Deploys to Vercel.
 

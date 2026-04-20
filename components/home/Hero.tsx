@@ -25,19 +25,19 @@ export function Hero() {
           <div className="video-pip">
             <div className="pip-stage" id="pipStage">
               <div className="pip-person active" style={{background: "#000"}}>
-                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/convo-website/releases/download/v1-assets/pip-businesswoman.mp4" type="video/mp4" /></video>
+                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/humanize-website/releases/download/v1-assets/pip-businesswoman.mp4" type="video/mp4" /></video>
               </div>
               <div className="pip-person" style={{background: "#000"}}>
-                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/convo-website/releases/download/v1-assets/pip-smile.mp4" type="video/mp4" /></video>
+                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/humanize-website/releases/download/v1-assets/pip-smile.mp4" type="video/mp4" /></video>
               </div>
               <div className="pip-person" style={{background: "#000"}}>
-                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/convo-website/releases/download/v1-assets/pip-webcam.mp4" type="video/mp4" /></video>
+                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/humanize-website/releases/download/v1-assets/pip-webcam.mp4" type="video/mp4" /></video>
               </div>
               <div className="pip-person" style={{background: "#000"}}>
-                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/convo-website/releases/download/v1-assets/pip-footage.mp4" type="video/mp4" /></video>
+                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/humanize-website/releases/download/v1-assets/pip-footage.mp4" type="video/mp4" /></video>
               </div>
               <div className="pip-person" style={{background: "#000"}}>
-                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/convo-website/releases/download/v1-assets/pip-woman-home.mp4" type="video/mp4" /></video>
+                <video autoPlay loop muted playsInline style={{position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover"}}><source src="https://github.com/convo-social/humanize-website/releases/download/v1-assets/pip-woman-home.mp4" type="video/mp4" /></video>
               </div>
             </div>
             <div className="pip-wave">

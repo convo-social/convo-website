@@ -9,7 +9,7 @@ import {
 export const metadata: Metadata = {
   title: "Study Privacy Policy",
   description:
-    "How Convo handles Personal Data from individuals who participate in AI-moderated research Studies.",
+    "How Humanize handles Personal Data from individuals who participate in AI-moderated research Studies.",
   alternates: { canonical: "/study-privacy" },
 };
 
@@ -21,7 +21,7 @@ export default function StudyPrivacyPage() {
         <strong>Last Updated: February 19, 2026</strong>
       </LegalUpdated>
       <p>
-        This policy applies to individuals who participate in a Convo
+        This policy applies to individuals who participate in a Humanize
         AI-moderated research focus group or interview (each, a
         &ldquo;Study&rdquo;). For information about how we handle data from
         website visitors and customers, please see our{" "}
@@ -49,7 +49,7 @@ export default function StudyPrivacyPage() {
           </li>
           <li>
             <strong>A research client is receiving your insights.</strong> The
-            Study may be commissioned by a Convo customer (&ldquo;Research
+            Study may be commissioned by a Humanize customer (&ldquo;Research
             Client&rdquo;). Your responses — including transcripts and
             AI-generated analysis — will be shared with that Research Client.
           </li>
@@ -73,7 +73,7 @@ export default function StudyPrivacyPage() {
 
       <h2>1. What This Policy Covers &amp; Contact Information</h2>
       <p>
-        Convo provides an AI-powered qualitative research platform that enables
+        Humanize provides an AI-powered qualitative research platform that enables
         brands and organizations to conduct focus groups and interviews. This
         Study Privacy Policy (&ldquo;Policy&rdquo;) details how we collect and
         process personal data from individuals who participate in our Studies
@@ -189,7 +189,7 @@ export default function StudyPrivacyPage() {
         </li>
         <li>
           <strong>Legal Authorities:</strong> If required by law, court order,
-          or to protect the rights, property, or safety of Convo, our users, or
+          or to protect the rights, property, or safety of Humanize, our users, or
           others.
         </li>
       </ul>
@@ -241,7 +241,7 @@ export default function StudyPrivacyPage() {
           session.
         </li>
         <li>
-          Convo cannot guarantee confidentiality of what is discussed, as we
+          Humanize cannot guarantee confidentiality of what is discussed, as we
           cannot control what other participants do with information they hear
           during the session.
         </li>
@@ -267,12 +267,12 @@ export default function StudyPrivacyPage() {
       </p>
       <ul>
         <li>
-          This Policy governs how Convo handles your Personal Data during and
+          This Policy governs how Humanize handles your Personal Data during and
           after the Study.
         </li>
         <li>
           Consent provided to a recruitment platform does not substitute for
-          the consent you provide to Convo. By joining a Study, you consent to
+          the consent you provide to Humanize. By joining a Study, you consent to
           the data collection and processing described in this Policy.
         </li>
         <li>
@@ -389,7 +389,7 @@ export default function StudyPrivacyPage() {
         your Personal Data, please contact:
       </p>
       <p>
-        <strong>Convo</strong>
+        <strong>Humanize</strong>
         <br />
         Attn: Orr Matarasso, Data Protection Officer
         <br />

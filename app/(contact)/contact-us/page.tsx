@@ -5,7 +5,7 @@ import styles from "./ContactPage.module.css";
 export const metadata: Metadata = {
   title: "Talk to our team",
   description:
-    "Get in touch with the Convo team about Humanize. We'll be back within one business day.",
+    "Get in touch with the Humanize team. We'll be back within one business day.",
   alternates: { canonical: "/contact-us" },
 };
 

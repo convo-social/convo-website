@@ -16,11 +16,11 @@ export default function TermsOfServicePage() {
         <strong>Last Updated: April 1, 2026</strong>
       </LegalUpdated>
       <p>
-        Welcome to Convo! These Terms of Service (&ldquo;Terms&rdquo;) govern
-        your access to and use of the Convo platform, website, and services
-        (collectively, the &ldquo;Services&rdquo;) operated by Convo
-        (&ldquo;Convo,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
-        &ldquo;our&rdquo;) at convo.social.
+        Welcome to Humanize! These Terms of Service (&ldquo;Terms&rdquo;) govern
+        your access to and use of the Humanize platform, website, and services
+        (collectively, the &ldquo;Services&rdquo;) operated by Humanize
+        (&ldquo;Humanize,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+        &ldquo;our&rdquo;) at useconvo.ai.
       </p>
       <p>
         By accessing or using any part of the Services, you agree to be bound
@@ -72,7 +72,7 @@ export default function TermsOfServicePage() {
 
       <h2>2. The Services</h2>
       <p>
-        Convo provides an AI-powered qualitative research platform that
+        Humanize provides an AI-powered qualitative research platform that
         enables Researchers to design studies, recruit and screen participants,
         conduct AI-moderated focus groups and interviews, and receive
         structured analysis of research sessions.
@@ -150,13 +150,13 @@ export default function TermsOfServicePage() {
         </li>
         <li>
           <strong>Research Data:</strong> Research Data generated during
-          Studies is processed and held by Convo. Researchers receive a
+          Studies is processed and held by Humanize. Researchers receive a
           license to access, use, and download Research Data (including
           transcripts, analysis, and insights) for their internal research and
           business purposes.
         </li>
         <li>
-          <strong>Aggregated Data:</strong> Convo may use anonymized,
+          <strong>Aggregated Data:</strong> Humanize may use anonymized,
           aggregated, and de-identified data derived from Studies to improve
           the Services, develop new features, and conduct internal research.
           This data will not identify individual Participants or Researchers.
@@ -186,7 +186,7 @@ export default function TermsOfServicePage() {
       <ul>
         <li>Other Participants in the session will hear their responses</li>
         <li>
-          Convo cannot guarantee that other Participants will maintain
+          Humanize cannot guarantee that other Participants will maintain
           confidentiality of what is discussed
         </li>
         <li>
@@ -196,7 +196,7 @@ export default function TermsOfServicePage() {
       </ul>
       <h3>6.3 Participant Content</h3>
       <p>
-        By participating in a Study, Participants grant Convo a limited,
+        By participating in a Study, Participants grant Humanize a limited,
         non-exclusive, worldwide, royalty-free license to use, store,
         reproduce, transcribe, analyze, and distribute their responses solely
         for:
@@ -246,7 +246,7 @@ export default function TermsOfServicePage() {
       <h2>8. Intellectual Property</h2>
       <p>
         The Services, including all content, features, functionality,
-        software, text, graphics, logos, and trademarks, are owned by Convo or
+        software, text, graphics, logos, and trademarks, are owned by Humanize or
         its licensors and are protected by United States and international
         intellectual property laws.
       </p>
@@ -340,7 +340,7 @@ export default function TermsOfServicePage() {
 
       <h2>14. Indemnification</h2>
       <p>
-        You agree to indemnify, defend, and hold harmless Convo and its
+        You agree to indemnify, defend, and hold harmless Humanize and its
         officers, directors, employees, and agents from any claims,
         liabilities, damages, losses, costs, and expenses (including
         reasonable attorneys&rsquo; fees) arising out of your use of the
@@ -381,7 +381,7 @@ export default function TermsOfServicePage() {
           <strong>Entire Agreement.</strong> These Terms, together with our{" "}
           <Link href="/privacy-policy">Privacy Policy</Link> and{" "}
           <Link href="/study-privacy">Study Privacy Policy</Link>, constitute
-          the entire agreement between you and Convo regarding the Services.
+          the entire agreement between you and Humanize regarding the Services.
         </li>
         <li>
           <strong>Assignment.</strong> You may not assign these Terms without
@@ -405,7 +405,7 @@ export default function TermsOfServicePage() {
       <h2>18. Contact Us</h2>
       <p>If you have questions about these Terms, please contact us:</p>
       <p>
-        <strong>Convo</strong>
+        <strong>Humanize</strong>
         <br />
         300 West 57th Street, 41st Floor
         <br />

@@ -186,7 +186,7 @@ export function HowItWorks() {
 
                       <div className="video-player-mock">
                         <video autoPlay loop muted playsInline>
-                          <source src="https://github.com/convo-social/convo-website/releases/download/v1-assets/woman-talking.mp4" type="video/mp4" />
+                          <source src="https://github.com/convo-social/humanize-website/releases/download/v1-assets/woman-talking.mp4" type="video/mp4" />
                         </video>
                       </div>
                     </div>

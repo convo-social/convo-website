@@ -1,6 +1,6 @@
-# Convo website — agent notes
+# Humanize website — agent notes
 
-Marketing site for Humanize (Convo's AI-moderated research product). Next.js 16
+Marketing site for Humanize (AI-moderated research). Next.js 16
 App Router + TypeScript, deployed to Vercel. Ported from a static HTML site; the
 visual design is the source of truth and must not drift.
 

@@ -17,23 +17,23 @@ export default function PrivacyPolicyPage() {
         <strong>Last Updated: April 1, 2026</strong>
       </LegalUpdated>
       <p>
-        Thank you for visiting Convo! We value your privacy and want you to
+        Thank you for visiting Humanize! We value your privacy and want you to
         understand how we collect, use, and protect your personal data when you
         interact with our website, sign up for our services as a customer,
         request demos, receive marketing communications, or otherwise engage
         with us in a non-participant capacity.
       </p>
       <p>
-        <strong>Note:</strong> If you are participating in a Convo research
+        <strong>Note:</strong> If you are participating in a Humanize research
         study or focus group, please see our separate{" "}
-        <Link href="/study-privacy">Convo Study Privacy Policy</Link> for
+        <Link href="/study-privacy">Humanize Study Privacy Policy</Link> for
         details on how we handle participant data.
       </p>
       <hr />
 
       <h2>1. Introduction &amp; Contact Information</h2>
       <p>
-        Convo provides an AI-powered qualitative research platform. This
+        Humanize provides an AI-powered qualitative research platform. This
         Privacy Policy (&ldquo;Policy&rdquo;) describes how we collect and
         process personal data from:
       </p>
@@ -257,7 +257,7 @@ export default function PrivacyPolicyPage() {
         data, please contact us at:
       </p>
       <p>
-        <strong>Convo</strong>
+        <strong>Humanize</strong>
         <br />
         Attn: Orr Matarasso, Data Protection Officer
         <br />

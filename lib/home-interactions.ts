@@ -808,9 +808,13 @@ const plCards = document.querySelectorAll('.pl-card');
   var track = document.getElementById('logosTrack');
   if (!track || track.dataset.cloned === 'true') return;
   var items = Array.from(track.children);
-  items.forEach(function(item) {
-    track.appendChild(item.cloneNode(true));
-  });
+  var setWidth = track.scrollWidth;
+  var reps = Math.max(1, Math.ceil(window.innerWidth / setWidth));
+  for (var i = 1; i < reps; i++) {
+    items.forEach(function(item) { track.appendChild(item.cloneNode(true)); });
+  }
+  var firstHalf = Array.from(track.children);
+  firstHalf.forEach(function(item) { track.appendChild(item.cloneNode(true)); });
   track.dataset.cloned = 'true';
 })();
 

@@ -280,6 +280,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: var(--text-body);
   line-height: var(--text-body-lh);
+  overflow-x: hidden;
 }
 
 a {

@@ -5,7 +5,10 @@ import styles from "./Footer.module.css";
 const COLUMNS = [
   {
     title: "Company",
-    links: [{ href: "/contact-us", label: "Contact" }],
+    links: [
+      { href: "/careers", label: "Careers" },
+      { href: "/contact-us", label: "Contact" },
+    ],
   },
 ];
 

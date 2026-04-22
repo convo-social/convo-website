@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
         <br />
         United States
         <br />
-        orr@useconvo.ai
+        orr@humanize.app
       </p>
 
       <h2>2. Information We Collect</h2>
@@ -185,7 +185,7 @@ export default function PrivacyPolicyPage() {
       <p>
         We keep personal data only as long as needed for the purposes described
         in this Policy or as required by law. You may request deletion of your
-        data by contacting orr@useconvo.ai.
+        data by contacting orr@humanize.app.
       </p>
 
       <h2>7. Your Rights and Choices</h2>
@@ -221,7 +221,7 @@ export default function PrivacyPolicyPage() {
         </li>
       </ul>
       <p>
-        To exercise your rights, please email orr@useconvo.ai. We will respond
+        To exercise your rights, please email orr@humanize.app. We will respond
         within the timeframe required by applicable law.
       </p>
 
@@ -267,7 +267,7 @@ export default function PrivacyPolicyPage() {
         <br />
         United States
         <br />
-        orr@useconvo.ai
+        orr@humanize.app
       </p>
       <p>
         If you are in the EU or UK, you may also have the right to lodge a

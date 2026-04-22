@@ -64,7 +64,7 @@ export default function StudyPrivacyPage() {
           <li>
             You can exercise your privacy rights at any time. To access,
             correct, or delete your data, or for any questions, contact us at{" "}
-            <a href="mailto:orr@useconvo.ai">orr@useconvo.ai</a>.
+            <a href="mailto:orr@humanize.app">orr@humanize.app</a>.
           </li>
         </ul>
       </LegalSummaryBox>
@@ -101,7 +101,7 @@ export default function StudyPrivacyPage() {
         <br />
         United States
         <br />
-        orr@useconvo.ai
+        orr@humanize.app
       </p>
 
       <h2>2. Personal Data We Collect</h2>
@@ -305,7 +305,7 @@ export default function StudyPrivacyPage() {
       </p>
       <p>
         You can request deletion of your Personal Data by contacting
-        orr@useconvo.ai. We will process your request in accordance with
+        orr@humanize.app. We will process your request in accordance with
         applicable law, though certain data may need to be retained for legal
         or compliance reasons.
       </p>
@@ -347,7 +347,7 @@ export default function StudyPrivacyPage() {
         </li>
       </ul>
       <p>
-        To exercise these rights, contact orr@useconvo.ai. We will respond
+        To exercise these rights, contact orr@humanize.app. We will respond
         within the timeframe required by applicable law.
       </p>
       <p>
@@ -399,7 +399,7 @@ export default function StudyPrivacyPage() {
         <br />
         United States
         <br />
-        orr@useconvo.ai
+        orr@humanize.app
       </p>
       <p>
         If you are in the EU or UK, you may also have the right to lodge a

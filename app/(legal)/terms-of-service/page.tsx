@@ -20,7 +20,7 @@ export default function TermsOfServicePage() {
         your access to and use of the Humanize platform, website, and services
         (collectively, the &ldquo;Services&rdquo;) operated by Humanize
         (&ldquo;Humanize,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
-        &ldquo;our&rdquo;) at useconvo.ai.
+        &ldquo;our&rdquo;) at humanize.app.
       </p>
       <p>
         By accessing or using any part of the Services, you agree to be bound
@@ -284,7 +284,7 @@ export default function TermsOfServicePage() {
       <h3>11.1 By You</h3>
       <p>
         You may terminate your Account at any time by contacting us at
-        support@useconvo.ai.
+        support@humanize.app.
       </p>
       <h3>11.2 By Us</h3>
       <p>
@@ -351,7 +351,7 @@ export default function TermsOfServicePage() {
       <h2>15. Dispute Resolution</h2>
       <h3>15.1 Informal Resolution</h3>
       <p>
-        Before filing a claim, you agree to contact us at legal@useconvo.ai
+        Before filing a claim, you agree to contact us at legal@humanize.app
         and attempt to resolve the dispute informally for at least 30 days.
       </p>
       <h3>15.2 Governing Law</h3>
@@ -412,7 +412,7 @@ export default function TermsOfServicePage() {
         New York, NY 10019
       </p>
       <p>
-        <strong>Email:</strong> support@useconvo.ai
+        <strong>Email:</strong> support@humanize.app
       </p>
     </LegalPage>
   );

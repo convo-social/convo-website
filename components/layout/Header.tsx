@@ -22,7 +22,7 @@ export function Header({ ctaLabel = "Book a demo" }: HeaderProps) {
 
         <div className={styles.actions}>
           <a
-            href="https://useconvo.ai"
+            href="https://humanize.app"
             target="_blank"
             rel="noopener"
             className="btn btn-ghost btn-sm"
@@ -48,7 +48,7 @@ export function Header({ ctaLabel = "Book a demo" }: HeaderProps) {
       <div className={`${styles.mobile} ${open ? styles.open : ""}`}>
         <div className={styles.mobileButtons}>
           <a
-            href="https://useconvo.ai"
+            href="https://humanize.app"
             target="_blank"
             rel="noopener"
             className="btn btn-ghost"

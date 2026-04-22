@@ -3,7 +3,7 @@ import { SegmentSnippet } from "@/components/analytics/SegmentSnippet";
 import { plexMono, plexSans, plexSerif } from "@/lib/fonts";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://useconvo.ai";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://humanize.app";
 const defaultTitle = "Humanize — AI-Moderated Qualitative Research";
 const defaultDescription =
   "Humanize runs AI-moderated interviews at the speed of a survey, delivering the depth of qualitative research without the cost or wait.";

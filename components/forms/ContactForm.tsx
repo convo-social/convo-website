@@ -5,7 +5,7 @@ import { track } from "@/lib/analytics";
 import styles from "./ContactForm.module.css";
 
 const CALENDLY_URL =
-  process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/useconvo/book";
+  process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/humanize-app/book";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
